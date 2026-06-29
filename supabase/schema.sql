@@ -35,7 +35,7 @@ create table public.applications (
   phone            text,
   country          text,
   field            text not null,
-  current_role     text,
+  job_title        text,
   organization     text,
   experience_years int,          -- mentors: years of experience
   goals            text,         -- mentees: what they want to achieve
