@@ -3,6 +3,11 @@ import { AuthProvider } from './context/AuthContext'
 import ProtectedRoute from './components/ProtectedRoute'
 
 import Home from './pages/Home'
+import About from './pages/About'
+import HowItWorks from './pages/HowItWorks'
+import SuccessStories from './pages/SuccessStories'
+import Contact from './pages/Contact'
+import Partners from './pages/Partners'
 import Login from './pages/Login'
 import Apply from './pages/Apply'
 import Dashboard from './pages/Dashboard'
@@ -15,6 +20,11 @@ export default function App() {
         <Routes>
           {/* Public */}
           <Route path="/" element={<Home />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/how-it-works" element={<HowItWorks />} />
+          <Route path="/success-stories" element={<SuccessStories />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/partners" element={<Partners />} />
           <Route path="/login" element={<Login />} />
           <Route path="/apply" element={<Apply />} />
 
