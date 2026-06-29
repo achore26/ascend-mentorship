@@ -5,9 +5,75 @@ import { supabase } from '../lib/supabase'
 
 const tabs = ['Applications', 'Users', 'Programs', 'Matches', 'Sessions', 'Resources']
 
+function CreateUserModal({ onClose, onCreated }) {
+  const [form, setForm] = useState({ full_name: '', email: '', role: 'mentee', password: '' })
+  const [saving, setSaving] = useState(false)
+  const [error, setError] = useState('')
+  const handleChange = e => setForm(f => ({ ...f, [e.target.name]: e.target.value }))
+
+  async function handleSubmit(e) {
+    e.preventDefault()
+    setError('')
+    setSaving(true)
+    const { data: { session } } = await supabase.auth.getSession()
+    const res = await fetch(`${import.meta.env.VITE_SUPABASE_URL}/functions/v1/create-user`, {
+      method: 'POST',
+      headers: {
+        'Content-Type': 'application/json',
+        'Authorization': `Bearer ${session.access_token}`,
+        'apikey': import.meta.env.VITE_SUPABASE_ANON_KEY,
+      },
+      body: JSON.stringify(form),
+    })
+    const json = await res.json()
+    if (!res.ok) { setError(json.error || 'Failed to create user'); setSaving(false); return }
+    onCreated()
+    onClose()
+  }
+
+  return (
+    <div style={{ position: 'fixed', inset: 0, background: 'rgba(0,0,0,0.5)', zIndex: 100, display: 'flex', alignItems: 'center', justifyContent: 'center', padding: '24px' }}>
+      <div style={{ background: '#fff', borderRadius: '16px', padding: '32px', width: '100%', maxWidth: '460px', boxShadow: '0 20px 60px rgba(0,0,0,0.2)' }}>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '24px' }}>
+          <h3 style={{ fontFamily: "'Plus Jakarta Sans', sans-serif", fontWeight: 700, fontSize: '18px', color: '#0A1F44' }}>Create New User</h3>
+          <button onClick={onClose} style={{ background: 'none', border: 'none', cursor: 'pointer', fontSize: '20px', color: '#9CA3AF' }}>✕</button>
+        </div>
+        <form onSubmit={handleSubmit} style={{ display: 'flex', flexDirection: 'column', gap: '16px' }}>
+          {[
+            { name: 'full_name', label: 'Full Name', type: 'text', placeholder: 'Jane Doe' },
+            { name: 'email', label: 'Email', type: 'email', placeholder: 'jane@example.com' },
+            { name: 'password', label: 'Temporary Password', type: 'password', placeholder: 'Min 8 characters' },
+          ].map(f => (
+            <div key={f.name}>
+              <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A1F44', marginBottom: '6px' }}>{f.label}</label>
+              <input name={f.name} type={f.type} required placeholder={f.placeholder} value={form[f.name]} onChange={handleChange}
+                style={{ width: '100%', border: '1px solid #E5E7EB', borderRadius: '8px', padding: '10px 14px', fontSize: '14px', outline: 'none', boxSizing: 'border-box' }} />
+            </div>
+          ))}
+          <div>
+            <label style={{ display: 'block', fontSize: '13px', fontWeight: 600, color: '#0A1F44', marginBottom: '6px' }}>Role</label>
+            <select name="role" value={form.role} onChange={handleChange}
+              style={{ width: '100%', border: '1px solid #E5E7EB', borderRadius: '8px', padding: '10px 14px', fontSize: '14px', outline: 'none', background: '#fff', boxSizing: 'border-box' }}>
+              <option value="mentee">Mentee</option>
+              <option value="mentor">Mentor</option>
+              <option value="admin">Admin</option>
+            </select>
+          </div>
+          {error && <div style={{ background: '#FEF2F2', border: '1px solid #FECACA', color: '#DC2626', fontSize: '13px', padding: '10px 14px', borderRadius: '8px' }}>{error}</div>}
+          <button type="submit" disabled={saving}
+            style={{ background: '#0A1F44', color: '#fff', fontWeight: 700, fontSize: '14px', padding: '12px', borderRadius: '8px', border: 'none', cursor: saving ? 'not-allowed' : 'pointer', opacity: saving ? 0.6 : 1, marginTop: '4px' }}>
+            {saving ? 'Creating…' : 'Create User'}
+          </button>
+        </form>
+      </div>
+    </div>
+  )
+}
+
 export default function Admin() {
   const { profile, signOut } = useAuth()
   const [tab, setTab] = useState('Applications')
+  const [showCreateUser, setShowCreateUser] = useState(false)
   const [data, setData] = useState([])
   const [loading, setLoading] = useState(true)
   const [actionLoading, setActionLoading] = useState(null)
@@ -131,6 +197,13 @@ export default function Admin() {
 
             {/* USERS */}
             {tab === 'Users' && (
+              <>
+              <div style={{ padding: '16px 20px', borderBottom: '1px solid #F3F4F6', display: 'flex', justifyContent: 'flex-end' }}>
+                <button onClick={() => setShowCreateUser(true)}
+                  style={{ background: '#0A1F44', color: '#fff', fontWeight: 700, fontSize: '13px', padding: '9px 18px', borderRadius: '8px', border: 'none', cursor: 'pointer' }}>
+                  + Create User
+                </button>
+              </div>
               <table className="w-full text-sm">
                 <thead className="bg-gray-50 border-b border-gray-100">
                   <tr>
@@ -161,6 +234,7 @@ export default function Admin() {
                   ))}
                 </tbody>
               </table>
+              </>
             )}
 
             {/* PROGRAMS */}
@@ -177,6 +251,13 @@ export default function Admin() {
           </div>
         )}
       </div>
+
+      {showCreateUser && (
+        <CreateUserModal
+          onClose={() => setShowCreateUser(false)}
+          onCreated={() => { loadTab('Users'); setTab('Users') }}
+        />
+      )}
     </div>
   )
 }
