@@ -1,0 +1,367 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ascend - Resources</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d8dadc",
+                        "primary-fixed": "#d9e2ff",
+                        "on-secondary-fixed-variant": "#633f00",
+                        "primary-fixed-dim": "#b4c6f4",
+                        "outline-variant": "#c5c6cf",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-tertiary-container": "#7989a1",
+                        "tertiary-container": "#102134",
+                        "background": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#feae2c",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-secondary-fixed": "#291800",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#34466d",
+                        "on-secondary-container": "#6b4500",
+                        "inverse-primary": "#b4c6f4",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-tint": "#4c5e86",
+                        "surface-container-low": "#f2f4f6",
+                        "on-background": "#191c1e",
+                        "primary": "#00081e",
+                        "on-primary-fixed": "#041a3f",
+                        "outline": "#75777f",
+                        "on-surface-variant": "#44464e",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#000918",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed-dim": "#ffb955",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-primary-container": "#7687b2",
+                        "primary-container": "#0a1f44",
+                        "on-error": "#ffffff",
+                        "secondary": "#835500",
+                        "secondary-fixed": "#ffddb4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "container-max": "1200px",
+                        "md": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter", "sans-serif"],
+                        "headline-md": ["Inter", "sans-serif"],
+                        "display-lg": ["Inter", "sans-serif"],
+                        "display-lg-mobile": ["Inter", "sans-serif"],
+                        "label-md": ["Inter", "sans-serif"],
+                        "headline-sm": ["Inter", "sans-serif"],
+                        "body-lg": ["Inter", "sans-serif"],
+                        "caption": ["Inter", "sans-serif"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .card-shadow {
+            box-shadow: 0 12px 24px -4px rgba(10, 31, 68, 0.05);
+        }
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+        .stagger-1 { animation: fadeInUp 0.5s ease-out 0.1s both; }
+        .stagger-2 { animation: fadeInUp 0.5s ease-out 0.2s both; }
+        .stagger-3 { animation: fadeInUp 0.5s ease-out 0.3s both; }
+        .stagger-4 { animation: fadeInUp 0.5s ease-out 0.4s both; }
+        .stagger-5 { animation: fadeInUp 0.5s ease-out 0.5s both; }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased pt-20" style="font-family: 'Inter', sans-serif;">
+<!-- TopNavBar Shared Component -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest fixed top-0 w-full z-50 border-b border-surface-variant dark:border-outline-variant shadow-none">
+<div class="flex justify-between items-center h-20 px-lg max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary">
+                Ascend
+            </div>
+<!-- Navigation Links (Desktop) -->
+<ul class="hidden md:flex items-center gap-md font-body-md text-body-md h-full">
+<li class="flex items-center h-full">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Home</a>
+</li>
+<li class="flex items-center h-full">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">About</a>
+</li>
+<li class="flex items-center h-full">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">How It Works</a>
+</li>
+<li class="flex items-center h-full text-primary font-bold border-b-2 border-secondary">
+<a class="cursor-pointer transition-transform duration-200 active:scale-95" href="#">Resources</a>
+</li>
+<li class="flex items-center h-full">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Stories</a>
+</li>
+<li class="flex items-center h-full">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Partners</a>
+</li>
+<li class="flex items-center h-full">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Contact</a>
+</li>
+</ul>
+<!-- Trailing Action -->
+<div class="hidden md:block">
+<button class="bg-secondary-container text-primary-container px-md py-sm rounded-lg font-label-md text-label-md hover:bg-secondary-fixed transition-colors">
+                    Apply Now
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content Canvas -->
+<main class="w-full">
+<!-- Header Section -->
+<section class="max-w-container-max mx-auto px-lg pt-lg pb-md">
+<h1 class="font-display-lg text-display-lg text-primary mb-sm">Library &amp; Resources</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl">Access curated guides, templates, and insights designed to accelerate your professional growth and mentorship journey.</p>
+</section>
+<!-- Featured Banner -->
+<section class="max-w-container-max mx-auto px-lg mb-lg">
+<div class="relative overflow-hidden rounded-xl bg-primary-container text-on-primary min-h-[300px] flex items-center shadow-md">
+<!-- Background Image Container -->
+<div class="absolute inset-0 z-0">
+<div class="bg-cover bg-center w-full h-full opacity-40 mix-blend-overlay" data-alt="A highly professional modern office interior bathed in natural warm sunlight. A sleek glass desk in the foreground holds a partially visible digital tablet displaying upward trending charts. The scene employs a sophisticated corporate aesthetic, primarily using bright whites and soft neutral tones, punctuated by deep navy shadows and vibrant amber sunlight accents. The mood is aspirational and empowering." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBau5uElMqTa3FjqS4z7zDbGvN_J1Ja6CDtAX-szLIwB6vf5CZkk6L6TdKLqd6ck1T9lbmJIaNDd4ZZ458CoQRbx8YCc1ZeEj2fgmystfK--y9d5OzFtVsqqsSIqEFqhDQCCXwnWJMlWL9ewon1HrSJTzGolHe18zRkAztEQ5PFv_b64MaWVV68VpqGHmarqZ1BoQNrIaIvsbf_E42SsZYlDVmkeAVjrYq0aQUXdJ1Yv0w7HMM0nvZj6MS_oWVVDs4d_WG-T04co08P')"></div>
+<!-- Gradient overlay for text readability -->
+<div class="absolute inset-0 bg-gradient-to-r from-primary-container via-primary-container/80 to-transparent"></div>
+</div>
+<!-- Banner Content -->
+<div class="relative z-10 p-lg w-full md:w-2/3">
+<span class="inline-flex items-center gap-xs px-sm py-xs bg-secondary-container/20 text-secondary-fixed rounded-full font-label-md text-label-md mb-md">
+<span class="material-symbols-outlined text-[16px]">star</span> Featured Resource
+                    </span>
+<h2 class="font-headline-md text-headline-md mb-md">The Ultimate Mentorship Handbook</h2>
+<p class="font-body-md text-body-md text-primary-fixed-dim mb-lg max-w-xl">A comprehensive 50-page PDF guide covering everything from setting initial goals to navigating complex career transitions with your mentor.</p>
+<button class="bg-secondary-container text-primary-container px-md py-sm rounded-lg font-label-md text-label-md hover:bg-secondary-fixed transition-colors flex items-center gap-sm w-fit">
+<span class="material-symbols-outlined">download</span> Download PDF
+                    </button>
+</div>
+</div>
+</section>
+<!-- Search & Filters -->
+<section class="max-w-container-max mx-auto px-lg mb-lg sticky top-20 z-40 bg-background/95 backdrop-blur py-md border-b border-surface-variant">
+<div class="flex flex-col md:flex-row gap-md justify-between items-center">
+<!-- Search Bar -->
+<div class="relative w-full md:w-96">
+<span class="material-symbols-outlined absolute left-sm top-1/2 -translate-y-1/2 text-primary">search</span>
+<input class="w-full pl-xl pr-md py-sm rounded-lg border border-outline-variant bg-surface-container-lowest focus:border-secondary-container focus:ring-1 focus:ring-secondary-container outline-none transition-all font-body-md text-body-md text-on-surface" placeholder="Search resources..." type="text"/>
+</div>
+<!-- Category Filters -->
+<div class="flex gap-sm overflow-x-auto w-full md:w-auto pb-xs md:pb-0 hide-scrollbar">
+<button class="whitespace-nowrap px-md py-xs rounded-full bg-primary-container text-secondary-fixed font-label-md text-label-md transition-colors">All</button>
+<button class="whitespace-nowrap px-md py-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary hover:border-secondary-container font-label-md text-label-md transition-colors border border-outline-variant">Guides</button>
+<button class="whitespace-nowrap px-md py-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary hover:border-secondary-container font-label-md text-label-md transition-colors border border-outline-variant">Templates</button>
+<button class="whitespace-nowrap px-md py-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary hover:border-secondary-container font-label-md text-label-md transition-colors border border-outline-variant">Video Series</button>
+<button class="whitespace-nowrap px-md py-xs rounded-full bg-surface-container hover:bg-surface-container-high text-on-surface-variant hover:text-primary hover:border-secondary-container font-label-md text-label-md transition-colors border border-outline-variant">Articles</button>
+</div>
+</div>
+</section>
+<!-- Resource Grid -->
+<section class="max-w-container-max mx-auto px-lg mb-xl">
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-gutter">
+<!-- Card 1 -->
+<article class="bg-surface-container-lowest rounded-lg p-md card-shadow border border-surface-variant flex flex-col h-full group hover:border-primary-fixed-dim transition-colors stagger-1">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<span class="px-sm py-xs rounded-full bg-primary-container/10 text-primary-container font-caption text-caption uppercase tracking-wider">Template</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm group-hover:text-secondary-container transition-colors">First Meeting Agenda</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg flex-grow">A structured framework to ensure your introductory mentorship session is productive and goal-oriented.</p>
+<button class="w-full flex items-center justify-center gap-sm py-sm rounded-lg border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span> Download Word Doc
+                    </button>
+</article>
+<!-- Card 2 -->
+<article class="bg-surface-container-lowest rounded-lg p-md card-shadow border border-surface-variant flex flex-col h-full group hover:border-primary-fixed-dim transition-colors stagger-2">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed flex items-center justify-center text-tertiary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">menu_book</span>
+</div>
+<span class="px-sm py-xs rounded-full bg-primary-container/10 text-primary-container font-caption text-caption uppercase tracking-wider">Guide</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm group-hover:text-secondary-container transition-colors">Navigating Feedback</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg flex-grow">Strategies for both giving and receiving constructive criticism effectively within a professional dynamic.</p>
+<button class="w-full flex items-center justify-center gap-sm py-sm rounded-lg border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span> Download PDF
+                    </button>
+</article>
+<!-- Card 3 -->
+<article class="bg-surface-container-lowest rounded-lg p-md card-shadow border border-surface-variant flex flex-col h-full group hover:border-primary-fixed-dim transition-colors stagger-3">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">play_circle</span>
+</div>
+<span class="px-sm py-xs rounded-full bg-primary-container/10 text-primary-container font-caption text-caption uppercase tracking-wider">Video</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm group-hover:text-secondary-container transition-colors">Mastering the Pitch</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg flex-grow">A 15-minute masterclass on refining your personal elevator pitch for networking events and interviews.</p>
+<button class="w-full flex items-center justify-center gap-sm py-sm rounded-lg text-primary-container font-label-md text-label-md hover:underline transition-all">
+<span class="material-symbols-outlined text-[20px]">open_in_new</span> Watch Now
+                    </button>
+</article>
+<!-- Card 4 -->
+<article class="bg-surface-container-lowest rounded-lg p-md card-shadow border border-surface-variant flex flex-col h-full group hover:border-primary-fixed-dim transition-colors stagger-4">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary-container">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">description</span>
+</div>
+<span class="px-sm py-xs rounded-full bg-primary-container/10 text-primary-container font-caption text-caption uppercase tracking-wider">Template</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm group-hover:text-secondary-container transition-colors">Goal Tracking Canvas</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg flex-grow">A visual spreadsheet template for mapping short-term and long-term career milestones with your mentor.</p>
+<button class="w-full flex items-center justify-center gap-sm py-sm rounded-lg border-2 border-primary-container text-primary-container font-label-md text-label-md hover:bg-primary-container hover:text-on-primary transition-colors">
+<span class="material-symbols-outlined text-[20px]">download</span> Download Excel
+                    </button>
+</article>
+<!-- Card 5 -->
+<article class="bg-surface-container-lowest rounded-lg p-md card-shadow border border-surface-variant flex flex-col h-full group hover:border-primary-fixed-dim transition-colors stagger-5">
+<div class="flex justify-between items-start mb-md">
+<div class="w-12 h-12 rounded-full bg-surface-container-high flex items-center justify-center text-on-surface">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">article</span>
+</div>
+<span class="px-sm py-xs rounded-full bg-primary-container/10 text-primary-container font-caption text-caption uppercase tracking-wider">Article</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm group-hover:text-secondary-container transition-colors">Industry Trends 2024</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg flex-grow">An analytical report on emerging skills and sectors, curated by top industry leaders in the Ascend network.</p>
+<button class="w-full flex items-center justify-center gap-sm py-sm rounded-lg text-primary-container font-label-md text-label-md hover:underline transition-all">
+<span class="material-symbols-outlined text-[20px]">read_more</span> Read Article
+                    </button>
+</article>
+</div>
+</section>
+<!-- FAQ Section -->
+<section class="bg-surface py-xl">
+<div class="max-w-3xl mx-auto px-lg">
+<div class="text-center mb-lg">
+<h2 class="font-display-lg text-display-lg text-primary mb-sm">Frequently Asked Questions</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">Need help navigating the library? Start here.</p>
+</div>
+<div class="space-y-sm">
+<!-- FAQ Item 1 -->
+<details class="bg-surface-container-lowest rounded-lg border border-surface-variant group [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex justify-between items-center cursor-pointer p-md font-headline-sm text-headline-sm text-primary">
+                            Are all resources free to download?
+                            <span class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="px-md pb-md font-body-md text-body-md text-on-surface-variant">
+                            Yes, as part of the Ascend Mentorship Program, all resources in this library are completely free for registered mentors and mentees. We believe in providing equal access to tools for success.
+                        </div>
+</details>
+<!-- FAQ Item 2 -->
+<details class="bg-surface-container-lowest rounded-lg border border-surface-variant group [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex justify-between items-center cursor-pointer p-md font-headline-sm text-headline-sm text-primary">
+                            How often is the library updated?
+                            <span class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="px-md pb-md font-body-md text-body-md text-on-surface-variant">
+                            We add new guides, templates, and insights on a monthly basis. Be sure to check the "Featured Resource" banner for the latest major additions, and look out for our monthly newsletter roundups.
+                        </div>
+</details>
+<!-- FAQ Item 3 -->
+<details class="bg-surface-container-lowest rounded-lg border border-surface-variant group [&amp;_summary::-webkit-details-marker]:hidden">
+<summary class="flex justify-between items-center cursor-pointer p-md font-headline-sm text-headline-sm text-primary">
+                            Can I submit my own resources?
+                            <span class="material-symbols-outlined transition-transform duration-300 group-open:-rotate-180 text-on-surface-variant">expand_more</span>
+</summary>
+<div class="px-md pb-md font-body-md text-body-md text-on-surface-variant">
+                            Absolutely! We encourage community contributions. If you have a template or guide that has worked well for your mentorship journey, please contact our support team. Submissions are reviewed quarterly.
+                        </div>
+</details>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-primary dark:bg-primary text-on-primary dark:text-on-primary font-body-md text-body-md w-full py-xl flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-lg max-w-container-max mx-auto">
+<!-- Brand Column -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-sm">
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary">
+                    Ascend
+                </div>
+<p class="text-on-primary-fixed-variant text-sm mt-xs">Empowering the next generation of professional leaders through meaningful connections.</p>
+</div>
+<!-- Links Column 1 -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-sm">
+<h4 class="font-label-md text-label-md text-secondary-fixed mb-xs">Social</h4>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 w-fit" href="#">LinkedIn</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 w-fit" href="#">Instagram</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 w-fit" href="#">Twitter</a>
+</div>
+<!-- Links Column 2 -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-sm">
+<h4 class="font-label-md text-label-md text-secondary-fixed mb-xs">Support</h4>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 w-fit" href="#">Contact Us</a>
+</div>
+<!-- Legal Column -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-sm">
+<h4 class="font-label-md text-label-md text-secondary-fixed mb-xs">Legal</h4>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 w-fit" href="#">Privacy Policy</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 w-fit" href="#">Terms of Service</a>
+</div>
+<!-- Copyright -->
+<div class="col-span-1 md:col-span-4 mt-lg pt-md border-t border-on-primary-fixed-variant/30 text-on-primary-fixed-variant text-sm">
+                © 2024 Ascend Mentorship Program. All rights reserved.
+            </div>
+</div>
+</footer>
+</body></html>

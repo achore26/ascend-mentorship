@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>About Us - Ascend</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+  tailwind.config = {
+    darkMode: "class",
+    theme: {
+      extend: {
+        "colors": {
+                "tertiary-fixed-dim": "#b7c8e1",
+                "on-primary-fixed": "#041a3f",
+                "primary-container": "#0a1f44",
+                "inverse-primary": "#b4c6f4",
+                "background": "#f7f9fb",
+                "tertiary-fixed": "#d3e4fe",
+                "tertiary": "#000918",
+                "on-secondary-container": "#6b4500",
+                "inverse-on-surface": "#eff1f3",
+                "error": "#ba1a1a",
+                "primary-fixed": "#d9e2ff",
+                "outline-variant": "#c5c6cf",
+                "on-tertiary-fixed": "#0b1c30",
+                "primary": "#00081e",
+                "on-error": "#ffffff",
+                "secondary": "#835500",
+                "surface-bright": "#f7f9fb",
+                "surface-container-low": "#f2f4f6",
+                "secondary-fixed-dim": "#ffb955",
+                "outline": "#75777f",
+                "on-tertiary": "#ffffff",
+                "primary-fixed-dim": "#b4c6f4",
+                "surface": "#f7f9fb",
+                "inverse-surface": "#2d3133",
+                "on-secondary": "#ffffff",
+                "on-primary": "#ffffff",
+                "surface-container-lowest": "#ffffff",
+                "on-background": "#191c1e",
+                "surface-container": "#eceef0",
+                "surface-tint": "#4c5e86",
+                "on-surface": "#191c1e",
+                "surface-container-highest": "#e0e3e5",
+                "on-secondary-fixed-variant": "#633f00",
+                "surface-variant": "#e0e3e5",
+                "secondary-container": "#feae2c",
+                "on-error-container": "#93000a",
+                "on-primary-fixed-variant": "#34466d",
+                "on-primary-container": "#7687b2",
+                "secondary-fixed": "#ffddb4",
+                "on-tertiary-fixed-variant": "#38485d",
+                "surface-container-high": "#e6e8ea",
+                "error-container": "#ffdad6",
+                "tertiary-container": "#102134",
+                "surface-dim": "#d8dadc",
+                "on-tertiary-container": "#7989a1",
+                "on-surface-variant": "#44464e",
+                "on-secondary-fixed": "#291800"
+        },
+        "borderRadius": {
+                "DEFAULT": "0.25rem",
+                "lg": "0.5rem",
+                "xl": "0.75rem",
+                "full": "9999px"
+        },
+        "spacing": {
+                "xl": "80px",
+                "sm": "12px",
+                "gutter": "24px",
+                "xs": "4px",
+                "md": "24px",
+                "container-max": "1200px",
+                "base": "8px",
+                "lg": "48px"
+        },
+        "fontFamily": {
+                "display-lg": [
+                        "Inter"
+                ],
+                "headline-md": [
+                        "Inter"
+                ],
+                "body-md": [
+                        "Inter"
+                ],
+                "body-lg": [
+                        "Inter"
+                ],
+                "display-lg-mobile": [
+                        "Inter"
+                ],
+                "headline-sm": [
+                        "Inter"
+                ],
+                "label-md": [
+                        "Inter"
+                ],
+                "caption": [
+                        "Inter"
+                ]
+        },
+        "fontSize": {
+                "display-lg": [
+                        "48px",
+                        {
+                                "lineHeight": "56px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-md": [
+                        "30px",
+                        {
+                                "lineHeight": "38px",
+                                "letterSpacing": "-0.01em",
+                                "fontWeight": "600"
+                        }
+                ],
+                "body-md": [
+                        "16px",
+                        {
+                                "lineHeight": "24px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "body-lg": [
+                        "18px",
+                        {
+                                "lineHeight": "28px",
+                                "fontWeight": "400"
+                        }
+                ],
+                "display-lg-mobile": [
+                        "36px",
+                        {
+                                "lineHeight": "44px",
+                                "letterSpacing": "-0.02em",
+                                "fontWeight": "700"
+                        }
+                ],
+                "headline-sm": [
+                        "24px",
+                        {
+                                "lineHeight": "32px",
+                                "fontWeight": "600"
+                        }
+                ],
+                "label-md": [
+                        "14px",
+                        {
+                                "lineHeight": "20px",
+                                "letterSpacing": "0.05em",
+                                "fontWeight": "500"
+                        }
+                ],
+                "caption": [
+                        "12px",
+                        {
+                                "lineHeight": "16px",
+                                "fontWeight": "400"
+                        }
+                ]
+        }
+},
+    },
+  }
+</script>
+<style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+        .bg-pattern {
+            background-image: radial-gradient(#d8dadc 1px, transparent 1px);
+            background-size: 24px 24px;
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-20">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest fixed top-0 w-full z-50 border-b border-surface-variant dark:border-outline-variant shadow-none">
+<div class="flex justify-between items-center h-20 px-lg max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary">
+                Ascend
+            </div>
+<!-- Desktop Nav -->
+<div class="hidden md:flex space-x-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Home</a>
+<a class="text-primary font-bold border-b-2 border-secondary font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">How It Works</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Resources</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Stories</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Partners</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Contact</a>
+</div>
+<!-- Mobile Menu Toggle (Decorative) -->
+<div class="md:hidden">
+<button class="text-primary p-2">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 0;">menu</span>
+</button>
+</div>
+<div class="hidden md:block">
+<button class="bg-secondary-container text-primary font-label-md text-label-md px-md py-sm rounded-lg hover:opacity-90 transition-opacity">
+                    Apply Now
+                </button>
+</div>
+</div>
+</nav>
+<main>
+<!-- Hero Section -->
+<section class="w-full bg-primary-fixed pt-xl pb-xl px-lg fade-in-section relative overflow-hidden">
+<div class="absolute inset-0 bg-pattern opacity-30"></div>
+<div class="max-w-container-max mx-auto relative z-10 text-center">
+<h1 class="font-display-lg text-display-lg text-primary mb-md md:font-display-lg-mobile md:text-display-lg-mobile">Why Ascend Exists</h1>
+<p class="font-body-lg text-body-lg text-on-primary-fixed-variant max-w-2xl mx-auto">We believe that every young professional deserves a guide. Our platform bridges the gap between ambition and experience, creating a space where mentorship thrives and careers accelerate.</p>
+</div>
+</section>
+<!-- Our Story / Two Column -->
+<section class="max-w-container-max mx-auto px-lg py-xl fade-in-section">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<!-- Left Narrative -->
+<div class="space-y-md">
+<h2 class="font-headline-md text-headline-md text-primary">Our Origin Story</h2>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Ascend was born from a simple realization: the professional world is complex, and navigating it alone is daunting. We saw talented individuals struggling to find their footing simply because they lacked access to experienced voices who had walked the path before them.
+                    </p>
+<p class="font-body-md text-body-md text-on-surface-variant">
+                        Our mission is to democratize mentorship. We leverage technology not to replace human connection, but to facilitate it—pairing eager learners with seasoned experts in a structured, supportive, and accessible environment.
+                    </p>
+<div class="flex items-center space-x-sm pt-sm">
+<span class="material-symbols-outlined text-secondary-container" style="font-variation-settings: 'FILL' 1;">insights</span>
+<span class="font-label-md text-label-md text-primary">Empowering the next generation of leaders.</span>
+</div>
+</div>
+<!-- Right Image/Graphic -->
+<div class="relative h-[400px] w-full rounded-xl overflow-hidden bg-surface-container-low shadow-sm border border-outline-variant/30 flex items-center justify-center p-sm">
+<img class="w-full h-full object-cover rounded-lg" data-alt="A modern, high-quality photograph illustrating professional mentorship. A diverse pair of professionals, one older and one younger, are engaged in a collaborative discussion over a tablet in a bright, contemporary office space with ample natural light. The aesthetic is warm, approachable, and corporate, aligning with the Ascend brand's empowerment and professionalism pillars. Soft amber sunlight filters through the windows." src="https://lh3.googleusercontent.com/aida-public/AB6AXuBtQW51ZKL5MiHy1LsbeD3HooRLZY36-48UL0fWjeAgfsiOSQ4rJDBa3b8V7C2F6nkRdQrLsiqfoERpjMZyett65ghv4PjC90zFa9hfN4zZ0ctBaHl5BSkKb7oLmuO1NE5WP_o7BGtNopixzM9GT1gSVTliiTNBdAZgP2B7_6ILr1IQ7BS-nhv1sPbFK09CeTIOWS6tRN7lQrT9KNSbJkugQBOPdq3Jc2p9pKQbucXzBiPoTgf0ps3JfysYciDDLQ-HEwjZC2uEQw6h"/>
+</div>
+</div>
+</section>
+<!-- Mission & Vision Cards (Bento Style) -->
+<section class="max-w-container-max mx-auto px-lg py-lg fade-in-section">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-gutter">
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-surface-variant flex flex-col items-start space-y-sm">
+<div class="w-12 h-12 rounded-full bg-primary-fixed flex items-center justify-center text-primary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">flag</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Mission</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">To provide structured, high-impact mentorship that accelerates career growth and fosters professional confidence.</p>
+</div>
+<div class="bg-surface-container-lowest p-md rounded-xl shadow-sm border border-surface-variant flex flex-col items-start space-y-sm">
+<div class="w-12 h-12 rounded-full bg-secondary-fixed flex items-center justify-center text-secondary">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">visibility</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary">Vision</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">A professional landscape where knowledge flows freely across generations, and every individual has a trusted guide.</p>
+</div>
+<div class="bg-tertiary-container p-md rounded-xl shadow-sm flex flex-col items-start space-y-sm text-on-tertiary">
+<div class="w-12 h-12 rounded-full bg-tertiary-fixed-dim/20 flex items-center justify-center text-tertiary-fixed">
+<span class="material-symbols-outlined" style="font-variation-settings: 'FILL' 1;">handshake</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-on-tertiary">Values</h3>
+<p class="font-body-md text-body-md text-on-tertiary-container">Trust, transparency, and a commitment to actionable, empathetic guidance.</p>
+</div>
+</div>
+</section>
+<!-- Meet the Team -->
+<section class="max-w-container-max mx-auto px-lg py-xl fade-in-section">
+<div class="text-center mb-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-xs">Meet the Team</h2>
+<p class="font-body-lg text-body-lg text-on-surface-variant">The program leads dedicated to your success.</p>
+</div>
+<div class="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-gutter">
+<!-- Team Member 1 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant group fade-in-section">
+<div class="h-48 w-full bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional headshot of a confident female program director in her late 30s. She has a warm smile and is wearing a modern navy blazer over a light blouse. The background is a slightly blurred, bright, modern office space to convey professionalism and approachability. High quality, soft lighting." src="https://lh3.googleusercontent.com/aida-public/AB6AXuAotdU6Sk8i20pBA64LZyWuxxgDJxsr-zWV7PTDu9KVT4GZ_jVliNiJ11n9Jxspl9t0kGynPDlBFDduR-PLTQIXvF9arm30iNeTvwHaEEwteZus-Fc7SkonKsk9YMn7IviCkNn18OdaMb7ceYLrgKtGVPihhVJRkCcmFR8SrE5edsy7SBa2YinW6-82ATFUTh07s3vlXizNOUKf0_7aTvOnC34qQoe6hUr4JceimIft3rr2u2YhC5-YcgZBuDemiHlHL3NE8wWEYwft"/>
+</div>
+<div class="p-md text-center">
+<h4 class="font-headline-sm text-headline-sm text-primary">Sarah Jenkins</h4>
+<p class="font-label-md text-label-md text-secondary-container mb-sm">Program Director</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">10+ years shaping corporate mentorship programs.</p>
+</div>
+</div>
+<!-- Team Member 2 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant group fade-in-section">
+<div class="h-48 w-full bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional headshot of a friendly male community manager in his late 20s. He is wearing a smart-casual amber-toned sweater over a collared shirt. He has an engaging expression. The background is a bright, airy workspace with subtle greenery. High quality, modern corporate aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuC7g1vVcQcqoS910xbECSmb21FaRggNoHLBQmXAZvJDSp-COMDUtRy2-Rc6fcqzA05WMZxEAtibLmMPpVfojj14MMI6Z09nUTm-OCwIYHbfEq2ClJTH9Oh_e6hEw3aupNQoQzENppmPXkOiLGGYAJYFhUsUYSu9xkHklkkYuwCVp0F4ASKRjxHqw6P7VYmDxf0Oi8av0i6_HxiUreZpHBGx-2iRRGGhx4fsUAM_E1eCdMC0GpBOOfpvNhMZX1zwqtBVYNDM_aTk_A4L"/>
+</div>
+<div class="p-md text-center">
+<h4 class="font-headline-sm text-headline-sm text-primary">David Chen</h4>
+<p class="font-label-md text-label-md text-secondary-container mb-sm">Community Manager</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Ensures every pairing is meaningful and productive.</p>
+</div>
+</div>
+<!-- Team Member 3 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant group fade-in-section">
+<div class="h-48 w-full bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional headshot of a mature female lead mentor in her 50s. She exudes wisdom and warmth, wearing a tailored grey suit jacket. The background features a subtle, out-of-focus bookshelf indicating knowledge and experience. Soft, flattering lighting, high-end corporate style." src="https://lh3.googleusercontent.com/aida-public/AB6AXuCPa9jMkpf4n542qtt9cdrUx7GhX7ptVVB-CiLQyvPwAifGpiUDOFScycf8fBxjSiyvL3-HvDv_f6DrqZGvOKewhEghhbj9UrxSybA06VEumbO7cHy-V7gF-5lrxtXIeJPGrMz0bCCEmnUffuJ7rSwySGinLaQl0-ShSkRo3NSmlkADuIz6iBzd8gQj3kg7-sWwY_mm5ajVcfYUHJhMnWl3UQ7XaU18Wsb9OptwxrwOuBA_PX2w2HAAC2GeWP-_-lerbogiSVN3Jgss"/>
+</div>
+<div class="p-md text-center">
+<h4 class="font-headline-sm text-headline-sm text-primary">Elena Rodriguez</h4>
+<p class="font-label-md text-label-md text-secondary-container mb-sm">Lead Mentor</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Former VP of Operations, passionate about guiding new leaders.</p>
+</div>
+</div>
+<!-- Team Member 4 -->
+<div class="bg-surface-container-lowest rounded-xl overflow-hidden shadow-sm border border-surface-variant group fade-in-section">
+<div class="h-48 w-full bg-surface-container-low overflow-hidden">
+<img class="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500" data-alt="A professional headshot of an energetic male platform engineer in his early 30s. He is smiling warmly, wearing a neat navy blue polo shirt. The background is a clean, minimalist white wall with a hint of architectural detail. Bright, inviting, and modern aesthetic." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDlHCXj18zR9YMsKWsKjSOzRce1eA-cVoL3Qa9jp4u50eNEegx2j7__q6SG_4KglOQuDGvNYk3l5Wn5K0eUMz1JHB-K6JWQu_9NzwNQSF6rD8pWk6cq7oXHclwetlmJ1UK5b8tqAHuoFGmpiNWJKuGio1PjYc--3n4UX-8unewXboOQu6qjJYhw9elRSqGonL46_W0H82XqpjA5JdNeJH2HFXpHWdosWZuK4ei0nxT20nDLYb1edLopCcEKKTuX-yNVr2ejR7PdZbkX"/>
+</div>
+<div class="p-md text-center">
+<h4 class="font-headline-sm text-headline-sm text-primary">Marcus Cole</h4>
+<p class="font-label-md text-label-md text-secondary-container mb-sm">Platform Architect</p>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">Builds the seamless tech that connects our community.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Partners Strip -->
+<section class="bg-surface-container-low py-lg border-y border-outline-variant/30 fade-in-section">
+<div class="max-w-container-max mx-auto px-lg">
+<p class="text-center font-label-md text-label-md text-on-surface-variant mb-md uppercase tracking-wider">Trusted by industry leaders</p>
+<div class="flex flex-wrap justify-center items-center gap-xl opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+<!-- Partner Logos Placeholders -->
+<div class="font-headline-sm text-headline-sm text-primary font-bold">TechCorp</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Innovate.io</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Global Finance</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Nexus Group</div>
+<div class="font-headline-sm text-headline-sm text-primary font-bold">Alpha Ventures</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary w-full py-xl text-on-primary dark:text-on-primary font-body-md text-body-md mt-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1 flex flex-col items-start space-y-md">
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary">
+                    Ascend
+                </div>
+<p class="text-on-primary-fixed-variant text-sm">Empowering the next generation of professional leaders.</p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap md:justify-end gap-md md:gap-xl">
+<div class="flex flex-col space-y-sm">
+<span class="font-label-md text-label-md text-secondary-fixed font-medium">Connect</span>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Instagram</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Twitter</a>
+</div>
+<div class="flex flex-col space-y-sm">
+<span class="font-label-md text-label-md text-secondary-fixed font-medium">Legal</span>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Contact Us</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+</div>
+</div>
+<div class="max-w-container-max mx-auto px-lg mt-xl pt-md border-t border-on-primary/10 text-center text-on-primary-fixed-variant text-sm">
+            © 2024 Ascend Mentorship Program. All rights reserved.
+        </div>
+</footer>
+<script>
+        // Scroll fade-in animation logic
+        document.addEventListener('DOMContentLoaded', () => {
+            const observer = new IntersectionObserver((entries) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                    }
+                });
+            }, {
+                threshold: 0.1,
+                rootMargin: "0px 0px -50px 0px"
+            });
+
+            document.querySelectorAll('.fade-in-section').forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

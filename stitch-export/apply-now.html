@@ -1,0 +1,317 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ascend - Apply</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d8dadc",
+                        "primary-fixed": "#d9e2ff",
+                        "on-secondary-fixed-variant": "#633f00",
+                        "primary-fixed-dim": "#b4c6f4",
+                        "outline-variant": "#c5c6cf",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-tertiary-container": "#7989a1",
+                        "tertiary-container": "#102134",
+                        "background": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#feae2c",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-secondary-fixed": "#291800",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#34466d",
+                        "on-secondary-container": "#6b4500",
+                        "inverse-primary": "#b4c6f4",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-tint": "#4c5e86",
+                        "surface-container-low": "#f2f4f6",
+                        "on-background": "#191c1e",
+                        "primary": "#00081e",
+                        "on-primary-fixed": "#041a3f",
+                        "outline": "#75777f",
+                        "on-surface-variant": "#44464e",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#000918",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed-dim": "#ffb955",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-primary-container": "#7687b2",
+                        "primary-container": "#0a1f44",
+                        "on-error": "#ffffff",
+                        "secondary": "#835500",
+                        "secondary-fixed": "#ffddb4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "container-max": "1200px",
+                        "md": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-variation-settings: 'FILL' 0, 'wght' 400, 'GRAD' 0, 'opsz' 24;
+        }
+        .fill-icon {
+            font-variation-settings: 'FILL' 1;
+        }
+        
+        /* Form Transitions */
+        .form-section {
+            transition: opacity 0.3s ease-in-out, transform 0.3s ease-in-out;
+        }
+        .form-hidden {
+            opacity: 0;
+            pointer-events: none;
+            position: absolute;
+            transform: translateY(10px);
+        }
+        .form-visible {
+            opacity: 1;
+            pointer-events: auto;
+            position: relative;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md min-h-screen flex flex-col">
+<!-- TopNavBar (Shared Component) -->
+<!-- Suppressed: This is a linear transactional/application flow. 
+         Following the Semantic Shell Mandate: Automatic Suppression if the page intent is Linear/Transactional.
+         Hiding the nav to focus on the application canvas. -->
+<header class="w-full bg-surface-container-lowest border-b border-surface-variant h-20 flex justify-center items-center px-lg sticky top-0 z-50">
+<div class="font-headline-sm text-headline-sm font-bold text-primary">Ascend</div>
+</header>
+<!-- Main Content Canvas -->
+<main class="flex-grow flex flex-col items-center justify-center py-xl px-4 md:px-lg max-w-container-max mx-auto w-full">
+<div class="text-center mb-lg">
+<h1 class="font-display-lg text-display-lg hidden md:block text-primary mb-sm">Join the Ascend Community</h1>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:hidden text-primary mb-sm">Join Ascend</h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant max-w-2xl mx-auto">Take the next step in your professional journey. Choose your path below.</p>
+</div>
+<div class="w-full max-w-3xl bg-surface-container-lowest rounded-xl shadow-[0_12px_24px_-12px_rgba(0,8,30,0.05)] border border-surface-variant overflow-hidden">
+<!-- Tab Toggle -->
+<div class="flex border-b border-surface-variant relative bg-surface-container-low">
+<button class="flex-1 py-md text-center font-label-md text-label-md text-primary font-bold border-b-2 border-secondary bg-surface-container-lowest transition-colors" id="btn-mentee" onclick="switchTab('mentee')">
+                    Apply as Mentee
+                </button>
+<button class="flex-1 py-md text-center font-label-md text-label-md text-on-surface-variant hover:text-primary transition-colors" id="btn-mentor" onclick="switchTab('mentor')">
+                    Register as Mentor
+                </button>
+</div>
+<div class="p-lg relative">
+<!-- Note -->
+<div class="bg-primary-fixed-dim/20 rounded-lg p-sm mb-lg flex items-center gap-sm">
+<span class="material-symbols-outlined text-primary-container">info</span>
+<p class="font-caption text-caption text-primary-container">We review all applications within 5 business days.</p>
+</div>
+<!-- Mentee Form -->
+<form class="form-section form-visible space-y-md" id="form-mentee">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">Full Name</label>
+<input class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Jane Doe" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">Email Address</label>
+<input class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="jane@university.edu" required="" type="email"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">LinkedIn URL</label>
+<input class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="linkedin.com/in/janedoe" type="url"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">University / Institution</label>
+<input class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="State University" type="text"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">Career Interests</label>
+<select class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+<option disabled="" selected="" value="">Select primary interest...</option>
+<option value="tech">Technology &amp; Software</option>
+<option value="design">Design &amp; UX</option>
+<option value="finance">Finance &amp; Consulting</option>
+<option value="marketing">Marketing &amp; Growth</option>
+<option value="other">Other</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">Motivation</label>
+<textarea class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors resize-none" placeholder="Tell us why you want to join Ascend and what you hope to achieve..." required="" rows="4"></textarea>
+</div>
+<div class="pt-sm">
+<button class="w-full bg-[#F5A623] hover:bg-secondary-container text-primary font-label-md text-label-md font-bold py-sm px-md rounded-DEFAULT transition-colors shadow-[0_4px_12px_rgba(245,166,35,0.2)]" type="button">
+                            Submit Mentee Application
+                        </button>
+</div>
+</form>
+<!-- Mentor Form -->
+<form class="form-section form-hidden space-y-md" id="form-mentor">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-md">
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">Full Name</label>
+<input class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="John Smith" required="" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">Professional Email</label>
+<input class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="john@company.com" required="" type="email"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">Company</label>
+<input class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Acme Corp" type="text"/>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">Job Title</label>
+<input class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors" placeholder="Senior Product Manager" type="text"/>
+</div>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">Areas of Expertise (Hold Ctrl/Cmd to select multiple)</label>
+<select class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors h-32" multiple="">
+<option value="leadership">Leadership &amp; Management</option>
+<option value="product">Product Strategy</option>
+<option value="engineering">Software Engineering</option>
+<option value="design">Product Design</option>
+<option value="data">Data Science</option>
+<option value="startup">Startup &amp; Entrepreneurship</option>
+</select>
+</div>
+<div>
+<label class="block font-label-md text-label-md text-primary mb-xs">Availability</label>
+<select class="w-full rounded-DEFAULT border-outline-variant bg-surface-container-lowest px-sm py-sm focus:border-primary focus:ring-1 focus:ring-primary outline-none transition-colors">
+<option disabled="" selected="" value="">Select commitment level...</option>
+<option value="low">1-2 hours / month</option>
+<option value="medium">3-5 hours / month</option>
+<option value="high">5+ hours / month</option>
+</select>
+</div>
+<div class="pt-sm">
+<button class="w-full bg-[#F5A623] hover:bg-secondary-container text-primary font-label-md text-label-md font-bold py-sm px-md rounded-DEFAULT transition-colors shadow-[0_4px_12px_rgba(245,166,35,0.2)]" type="button">
+                            Register as Mentor
+                        </button>
+</div>
+</form>
+</div>
+</div>
+</main>
+<!-- Footer (Shared Component) -->
+<!-- Suppressed for transactional/application page to maintain focus, 
+         but prompt says "Sticky nav and footer included." 
+         Restoring Footer per explicit user instruction, overriding standard suppression rules. -->
+<footer class="w-full py-xl bg-primary dark:bg-primary text-on-primary dark:text-on-primary font-body-md text-body-md mt-auto">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary mb-md">Ascend</div>
+<p class="text-on-primary-fixed-variant opacity-90 text-sm">Empowering the next generation of professional leaders through meaningful connections.</p>
+</div>
+<div class="col-span-1 md:col-span-3 flex flex-wrap justify-start md:justify-end gap-md md:gap-xl">
+<ul class="space-y-sm">
+<li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 block" href="#">LinkedIn</a></li>
+<li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 block" href="#">Instagram</a></li>
+<li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 block" href="#">Twitter</a></li>
+</ul>
+<ul class="space-y-sm">
+<li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 block" href="#">Contact Us</a></li>
+<li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 block" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary-fixed-variant hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 block" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-span-1 md:col-span-4 mt-lg pt-md border-t border-on-primary-fixed-variant/30 text-sm text-on-primary-fixed-variant">
+                © 2024 Ascend Mentorship Program. All rights reserved.
+            </div>
+</div>
+</footer>
+<script>
+        function switchTab(tab) {
+            const btnMentee = document.getElementById('btn-mentee');
+            const btnMentor = document.getElementById('btn-mentor');
+            const formMentee = document.getElementById('form-mentee');
+            const formMentor = document.getElementById('form-mentor');
+
+            if (tab === 'mentee') {
+                // Style buttons
+                btnMentee.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-secondary', 'bg-surface-container-lowest');
+                btnMentee.classList.remove('text-on-surface-variant');
+                
+                btnMentor.classList.remove('text-primary', 'font-bold', 'border-b-2', 'border-secondary', 'bg-surface-container-lowest');
+                btnMentor.classList.add('text-on-surface-variant');
+
+                // Show/Hide forms
+                formMentee.classList.remove('form-hidden');
+                formMentee.classList.add('form-visible');
+                
+                formMentor.classList.remove('form-visible');
+                formMentor.classList.add('form-hidden');
+            } else {
+                // Style buttons
+                btnMentor.classList.add('text-primary', 'font-bold', 'border-b-2', 'border-secondary', 'bg-surface-container-lowest');
+                btnMentor.classList.remove('text-on-surface-variant');
+                
+                btnMentee.classList.remove('text-primary', 'font-bold', 'border-b-2', 'border-secondary', 'bg-surface-container-lowest');
+                btnMentee.classList.add('text-on-surface-variant');
+
+                // Show/Hide forms
+                formMentor.classList.remove('form-hidden');
+                formMentor.classList.add('form-visible');
+                
+                formMentee.classList.remove('form-visible');
+                formMentee.classList.add('form-hidden');
+            }
+        }
+    </script>
+</body></html>

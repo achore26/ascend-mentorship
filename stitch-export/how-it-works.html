@@ -1,0 +1,479 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ascend - How It Works</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            "colors": {
+                    "surface-dim": "#d8dadc",
+                    "primary-fixed": "#d9e2ff",
+                    "on-secondary-fixed-variant": "#633f00",
+                    "primary-fixed-dim": "#b4c6f4",
+                    "outline-variant": "#c5c6cf",
+                    "surface-variant": "#e0e3e5",
+                    "on-surface": "#191c1e",
+                    "surface": "#f7f9fb",
+                    "surface-bright": "#f7f9fb",
+                    "surface-container": "#eceef0",
+                    "on-tertiary-fixed-variant": "#38485d",
+                    "on-tertiary-container": "#7989a1",
+                    "tertiary-container": "#102134",
+                    "background": "#f7f9fb",
+                    "surface-container-lowest": "#ffffff",
+                    "secondary-container": "#feae2c",
+                    "tertiary-fixed": "#d3e4fe",
+                    "on-secondary-fixed": "#291800",
+                    "inverse-on-surface": "#eff1f3",
+                    "on-tertiary-fixed": "#0b1c30",
+                    "error-container": "#ffdad6",
+                    "on-primary-fixed-variant": "#34466d",
+                    "on-secondary-container": "#6b4500",
+                    "inverse-primary": "#b4c6f4",
+                    "on-secondary": "#ffffff",
+                    "surface-container-highest": "#e0e3e5",
+                    "surface-container-high": "#e6e8ea",
+                    "surface-tint": "#4c5e86",
+                    "surface-container-low": "#f2f4f6",
+                    "on-background": "#191c1e",
+                    "primary": "#00081e",
+                    "on-primary-fixed": "#041a3f",
+                    "outline": "#75777f",
+                    "on-surface-variant": "#44464e",
+                    "on-error-container": "#93000a",
+                    "tertiary": "#000918",
+                    "error": "#ba1a1a",
+                    "on-primary": "#ffffff",
+                    "inverse-surface": "#2d3133",
+                    "secondary-fixed-dim": "#ffb955",
+                    "on-tertiary": "#ffffff",
+                    "tertiary-fixed-dim": "#b7c8e1",
+                    "on-primary-container": "#7687b2",
+                    "primary-container": "#0a1f44",
+                    "on-error": "#ffffff",
+                    "secondary": "#835500",
+                    "secondary-fixed": "#ffddb4"
+            },
+            "borderRadius": {
+                    "DEFAULT": "0.25rem",
+                    "lg": "0.5rem",
+                    "xl": "0.75rem",
+                    "full": "9999px"
+            },
+            "spacing": {
+                    "sm": "12px",
+                    "xs": "4px",
+                    "lg": "48px",
+                    "base": "8px",
+                    "xl": "80px",
+                    "container-max": "1200px",
+                    "md": "24px",
+                    "gutter": "24px"
+            },
+            "fontFamily": {
+                    "body-md": [
+                            "Inter"
+                    ],
+                    "headline-md": [
+                            "Inter"
+                    ],
+                    "display-lg": [
+                            "Inter"
+                    ],
+                    "display-lg-mobile": [
+                            "Inter"
+                    ],
+                    "label-md": [
+                            "Inter"
+                    ],
+                    "headline-sm": [
+                            "Inter"
+                    ],
+                    "body-lg": [
+                            "Inter"
+                    ],
+                    "caption": [
+                            "Inter"
+                    ]
+            },
+            "fontSize": {
+                    "body-md": [
+                            "16px",
+                            {
+                                    "lineHeight": "24px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "headline-md": [
+                            "30px",
+                            {
+                                    "lineHeight": "38px",
+                                    "letterSpacing": "-0.01em",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "display-lg": [
+                            "48px",
+                            {
+                                    "lineHeight": "56px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "display-lg-mobile": [
+                            "36px",
+                            {
+                                    "lineHeight": "44px",
+                                    "letterSpacing": "-0.02em",
+                                    "fontWeight": "700"
+                            }
+                    ],
+                    "label-md": [
+                            "14px",
+                            {
+                                    "lineHeight": "20px",
+                                    "letterSpacing": "0.05em",
+                                    "fontWeight": "500"
+                            }
+                    ],
+                    "headline-sm": [
+                            "24px",
+                            {
+                                    "lineHeight": "32px",
+                                    "fontWeight": "600"
+                            }
+                    ],
+                    "body-lg": [
+                            "18px",
+                            {
+                                    "lineHeight": "28px",
+                                    "fontWeight": "400"
+                            }
+                    ],
+                    "caption": [
+                            "12px",
+                            {
+                                    "lineHeight": "16px",
+                                    "fontWeight": "400"
+                            }
+                    ]
+            }
+          }
+        }
+      }
+    </script>
+<style>
+        .fade-in-section {
+            opacity: 0;
+            transform: translateY(20px);
+            visibility: hidden;
+            transition: opacity 0.8s ease-out, transform 0.8s ease-out;
+            will-change: opacity, visibility;
+        }
+        .fade-in-section.is-visible {
+            opacity: 1;
+            transform: none;
+            visibility: visible;
+        }
+        
+        /* Ambient Shadow for Cards */
+        .ambient-shadow {
+            box-shadow: 0 12px 24px -4px rgba(0, 8, 30, 0.05);
+        }
+        
+        /* High Elevation */
+        .high-elevation {
+            box-shadow: 0 24px 48px -12px rgba(0, 8, 30, 0.1);
+        }
+        
+        /* Timeline Vertical Line */
+        .timeline-line::before {
+            content: '';
+            position: absolute;
+            top: 24px;
+            bottom: 24px;
+            left: 24px;
+            width: 2px;
+            background-color: #e0e3e5; /* surface-variant */
+            z-index: 0;
+        }
+        @media (min-width: 768px) {
+            .timeline-line::before {
+                left: 50%;
+                margin-left: -1px;
+            }
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-20">
+<!-- TopNavBar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest fixed top-0 w-full z-50 border-b border-surface-variant dark:border-outline-variant shadow-none">
+<div class="flex justify-between items-center h-20 px-lg max-w-container-max mx-auto">
+<!-- Brand -->
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary cursor-pointer transition-transform duration-200 active:scale-95">
+                Ascend
+            </div>
+<!-- Navigation Links (Desktop) -->
+<div class="hidden md:flex space-x-md items-center">
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all" href="#">Home</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all" href="#">About</a>
+<a class="font-body-md text-body-md text-primary font-bold border-b-2 border-secondary hover:text-secondary-container transition-all" href="#">How It Works</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all" href="#">Resources</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all" href="#">Stories</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all" href="#">Partners</a>
+<a class="font-body-md text-body-md text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all" href="#">Contact</a>
+</div>
+<!-- Trailing Action -->
+<div class="hidden md:flex">
+<button class="bg-secondary-container text-on-secondary-container px-md py-sm rounded-lg font-label-md text-label-md cursor-pointer transition-transform duration-200 active:scale-95 hover:bg-secondary-fixed transition-colors">
+                    Apply Now
+                </button>
+</div>
+<!-- Mobile Menu Toggle -->
+<div class="md:hidden flex items-center">
+<button class="text-on-surface">
+<span class="material-symbols-outlined" style="font-size: 28px;">menu</span>
+</button>
+</div>
+</div>
+</nav>
+<!-- Hero Section -->
+<header class="py-xl px-lg max-w-container-max mx-auto fade-in-section mt-lg">
+<div class="grid grid-cols-1 md:grid-cols-2 gap-xl items-center">
+<div>
+<h1 class="font-display-lg-mobile md:font-display-lg text-display-lg-mobile md:text-display-lg text-primary mb-md">
+                    The Blueprint for Your Success
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-xl">
+                    Discover a structured, 6-month journey designed to equip recent graduates with the insights, connections, and confidence to thrive in the modern corporate landscape.
+                </p>
+<div class="flex flex-wrap gap-sm">
+<span class="bg-primary-fixed-dim bg-opacity-20 text-primary px-sm py-xs rounded-full font-label-md text-label-md inline-flex items-center gap-xs border border-primary-fixed-dim">
+<span class="material-symbols-outlined text-[16px]">schedule</span> 6 Months
+                    </span>
+<span class="bg-primary-fixed-dim bg-opacity-20 text-primary px-sm py-xs rounded-full font-label-md text-label-md inline-flex items-center gap-xs border border-primary-fixed-dim">
+<span class="material-symbols-outlined text-[16px]">group</span> 1-on-1 Mentorship
+                    </span>
+</div>
+</div>
+<div class="rounded-xl overflow-hidden ambient-shadow h-[400px]">
+<div class="bg-cover bg-center w-full h-full" data-alt="A clean, modern corporate office interior bathed in warm natural sunlight. Focus on a sleek wooden conference table with two young professionals looking at a laptop together, smiling. Bright, airy, and aspirational, utilizing ample whitespace and a sophisticated palette of deep navy accents against pristine whites." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCx3DJBOI6TTbGb7tiD1p4UXfwyhj1W2HxMqyj8B8ZRMwR_v-xPhGqnyzoGuKoJeSjDT-NEMpbiBT461HYtlZn7oBzX_IEVgGtT1V2DSO2HBFKrmtx64w3a-2gon2JFuAVZyAXs6xLGxg463ET1MG9TRBFqTg4vU2nVHUNGJjqrjUpyhdD4ysLRT_X4B6EO-RhbQFF4HfW0x1vGlURLnhtGofi3SVV0_wlveobLCiEfJo_PE-aUbOucJIAWMADRq5LZfdWT21nM2WYT')"></div>
+</div>
+</div>
+</header>
+<!-- Timeline Section (How It Works) -->
+<section class="bg-surface-container-lowest py-xl fade-in-section">
+<div class="px-lg max-w-container-max mx-auto">
+<div class="text-center mb-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-sm">Program Structure</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                    A thoughtfully curated timeline ensuring continuous growth, accountability, and real-world application.
+                </p>
+</div>
+<div class="relative timeline-line max-w-4xl mx-auto">
+<!-- Step 1 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center mb-lg">
+<div class="flex-1 w-full md:text-right md:pr-xl mb-md md:mb-0">
+<div class="bg-surface-container-lowest ambient-shadow rounded-lg p-md border border-surface-variant inline-block w-full max-w-sm text-left">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-xs">Application &amp; Selection</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Submit your profile, goals, and background. Our committee carefully matches you with a mentor aligned with your industry aspirations.</p>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-secondary-container text-primary flex items-center justify-center font-headline-sm font-bold shadow-sm mx-auto md:mx-0 absolute left-8 md:left-1/2 md:-ml-6 -top-2 md:top-auto z-20">
+                        1
+                    </div>
+<div class="flex-1 w-full md:pl-xl hidden md:block"></div>
+</div>
+<!-- Step 2 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center mb-lg">
+<div class="flex-1 w-full md:pr-xl hidden md:block"></div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-headline-sm font-bold border-2 border-surface-variant shadow-sm mx-auto md:mx-0 absolute left-8 md:left-1/2 md:-ml-6 -top-2 md:top-auto z-20">
+                        2
+                    </div>
+<div class="flex-1 w-full md:pl-xl mb-md md:mb-0 ml-20 md:ml-0">
+<div class="bg-surface-container-lowest ambient-shadow rounded-lg p-md border border-surface-variant inline-block w-full max-w-sm text-left">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-xs">Orientation Session</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">Kick off the cohort with an interactive virtual orientation. Meet your mentor, understand the framework, and set your baseline objectives.</p>
+</div>
+</div>
+</div>
+<!-- Step 3 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center mb-lg">
+<div class="flex-1 w-full md:text-right md:pr-xl mb-md md:mb-0 ml-20 md:ml-0">
+<div class="bg-surface-container-lowest ambient-shadow rounded-lg p-md border border-primary-fixed-dim inline-block w-full max-w-sm text-left relative overflow-hidden">
+<div class="absolute top-0 right-0 w-2 h-full bg-primary-container"></div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-xs">Monthly Sessions</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">The core of the program. Engage in 1-on-1 virtual meetings focusing on skill development, networking strategies, and leadership.</p>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-headline-sm font-bold border-2 border-surface-variant shadow-sm mx-auto md:mx-0 absolute left-8 md:left-1/2 md:-ml-6 -top-2 md:top-auto z-20">
+                        3
+                    </div>
+<div class="flex-1 w-full md:pl-xl hidden md:block"></div>
+</div>
+<!-- Step 4 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center mb-lg">
+<div class="flex-1 w-full md:pr-xl hidden md:block"></div>
+<div class="w-12 h-12 rounded-full bg-surface-container-high text-primary flex items-center justify-center font-headline-sm font-bold border-2 border-surface-variant shadow-sm mx-auto md:mx-0 absolute left-8 md:left-1/2 md:-ml-6 -top-2 md:top-auto z-20">
+                        4
+                    </div>
+<div class="flex-1 w-full md:pl-xl mb-md md:mb-0 ml-20 md:ml-0">
+<div class="bg-surface-container-lowest ambient-shadow rounded-lg p-md border border-surface-variant inline-block w-full max-w-sm text-left">
+<h3 class="font-headline-sm text-headline-sm text-primary mb-xs">Milestone Check-ins</h3>
+<p class="font-body-md text-body-md text-on-surface-variant">At the 3-month mark, program coordinators conduct a review to ensure goals are tracking correctly and relationships are thriving.</p>
+</div>
+</div>
+</div>
+<!-- Step 5 -->
+<div class="relative z-10 flex flex-col md:flex-row items-center">
+<div class="flex-1 w-full md:text-right md:pr-xl mb-md md:mb-0 ml-20 md:ml-0">
+<div class="bg-primary text-on-primary ambient-shadow rounded-lg p-md inline-block w-full max-w-sm text-left">
+<h3 class="font-headline-sm text-headline-sm text-on-primary mb-xs">Completion &amp; Certification</h3>
+<p class="font-body-md text-body-md text-on-primary opacity-90">Present your final takeaways in a capstone review. Receive your official Ascend certification and join our alumni network.</p>
+</div>
+</div>
+<div class="w-12 h-12 rounded-full bg-primary text-on-primary flex items-center justify-center font-headline-sm font-bold shadow-sm mx-auto md:mx-0 absolute left-8 md:left-1/2 md:-ml-6 -top-2 md:top-auto z-20">
+                        5
+                    </div>
+<div class="flex-1 w-full md:pl-xl hidden md:block"></div>
+</div>
+</div>
+</div>
+</section>
+<!-- Eligibility Section -->
+<section class="py-xl px-lg max-w-container-max mx-auto fade-in-section">
+<div class="bg-surface-container rounded-xl p-lg md:p-xl flex flex-col md:flex-row gap-xl items-center">
+<div class="w-full md:w-1/3">
+<h2 class="font-headline-md text-headline-md text-primary mb-md">Who Should Apply?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant mb-lg">
+                    We select individuals who demonstrate potential, drive, and a readiness to absorb knowledge from seasoned professionals.
+                </p>
+<button class="border-2 border-primary-container text-primary-container hover:bg-primary-container hover:text-on-primary px-md py-sm rounded-lg font-label-md text-label-md transition-colors w-full md:w-auto">
+                    Review Full Guidelines
+                </button>
+</div>
+<div class="w-full md:w-2/3 grid grid-cols-1 sm:grid-cols-3 gap-md">
+<!-- Item 1 -->
+<div class="bg-surface-container-lowest p-md rounded-lg ambient-shadow border border-surface-variant flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-primary-container" style="font-size: 32px; font-variation-settings: 'FILL' 1;">school</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-xs">Recent Graduates</h4>
+<p class="font-caption text-caption text-on-surface-variant">Graduated within the last 3 years from an accredited institution.</p>
+</div>
+<!-- Item 2 -->
+<div class="bg-surface-container-lowest p-md rounded-lg ambient-shadow border border-surface-variant flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-primary-fixed flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-primary-container" style="font-size: 32px; font-variation-settings: 'FILL' 1;">person</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-xs">Ages 22-35</h4>
+<p class="font-caption text-caption text-on-surface-variant">Early-career professionals looking to establish a strong trajectory.</p>
+</div>
+<!-- Item 3 -->
+<div class="bg-surface-container-lowest p-md rounded-lg ambient-shadow border border-surface-variant flex flex-col items-center text-center">
+<div class="w-16 h-16 rounded-full bg-secondary-fixed flex items-center justify-center mb-sm">
+<span class="material-symbols-outlined text-secondary-container" style="font-size: 32px; font-variation-settings: 'FILL' 1;">local_fire_department</span>
+</div>
+<h4 class="font-headline-sm text-headline-sm text-primary mb-xs">Self-Starters</h4>
+<p class="font-caption text-caption text-on-surface-variant">Highly motivated individuals with a clear initial career hypothesis.</p>
+</div>
+</div>
+</div>
+</section>
+<!-- Cohort Schedule Table -->
+<section class="py-xl px-lg max-w-container-max mx-auto fade-in-section mb-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-lg text-center">Upcoming Cohort Schedules</h2>
+<div class="bg-surface-container-lowest rounded-lg ambient-shadow border border-surface-variant overflow-hidden">
+<table class="w-full text-left border-collapse">
+<thead>
+<tr class="bg-surface-container border-b border-surface-variant">
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Cohort</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Applications Open</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider">Program Dates</th>
+<th class="py-sm px-md font-label-md text-label-md text-on-surface-variant uppercase tracking-wider text-right">Status</th>
+</tr>
+</thead>
+<tbody class="divide-y divide-surface-variant">
+<tr class="hover:bg-surface transition-colors">
+<td class="py-md px-md font-headline-sm text-headline-sm text-primary">Q1 2026</td>
+<td class="py-md px-md font-body-md text-body-md text-on-surface-variant">Oct 1 - Nov 30, 2025</td>
+<td class="py-md px-md font-body-md text-body-md text-on-surface-variant">Jan 15 - Jun 15, 2026</td>
+<td class="py-md px-md text-right">
+<span class="bg-secondary-fixed text-on-secondary-fixed px-sm py-xs rounded-full font-label-md text-label-md inline-block">Accepting Apps</span>
+</td>
+</tr>
+<tr class="hover:bg-surface transition-colors">
+<td class="py-md px-md font-headline-sm text-headline-sm text-primary">Q2 2026</td>
+<td class="py-md px-md font-body-md text-body-md text-on-surface-variant">Jan 1 - Feb 28, 2026</td>
+<td class="py-md px-md font-body-md text-body-md text-on-surface-variant">Apr 10 - Sep 10, 2026</td>
+<td class="py-md px-md text-right">
+<span class="bg-surface-variant text-on-surface-variant px-sm py-xs rounded-full font-label-md text-label-md inline-block">Upcoming</span>
+</td>
+</tr>
+</tbody>
+</table>
+</div>
+</section>
+<!-- Footer -->
+<footer class="bg-primary dark:bg-primary w-full py-xl text-on-primary dark:text-on-primary font-body-md text-body-md flat no shadows">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-lg max-w-container-max mx-auto">
+<!-- Brand & Copyright -->
+<div class="col-span-1 md:col-span-1 flex flex-col gap-sm">
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary">
+                    Ascend
+                </div>
+<p class="font-caption text-caption text-on-primary-fixed-variant opacity-90">
+                    © 2024 Ascend Mentorship Program. All rights reserved.
+                </p>
+</div>
+<!-- Empty col for spacing -->
+<div class="hidden md:block"></div>
+<!-- Links 1 -->
+<div class="col-span-1 flex flex-col gap-sm">
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Instagram</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Twitter</a>
+</div>
+<!-- Links 2 -->
+<div class="col-span-1 flex flex-col gap-sm">
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Contact Us</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+</div>
+</footer>
+<!-- Scroll Fade-In Script -->
+<script>
+        document.addEventListener("DOMContentLoaded", function() {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.15
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('is-visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            const sections = document.querySelectorAll('.fade-in-section');
+            sections.forEach(section => {
+                observer.observe(section);
+            });
+        });
+    </script>
+</body></html>

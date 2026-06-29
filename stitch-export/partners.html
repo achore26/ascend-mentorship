@@ -1,0 +1,347 @@
+<!DOCTYPE html>
+
+<html class="light" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Partner With Ascend</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&display=swap" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet"/>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        /* Custom Ambient Shadows based on style guidance */
+        .shadow-ambient-low {
+            box-shadow: 0 4px 12px rgba(0, 8, 30, 0.05);
+        }
+    </style>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d8dadc",
+                        "primary-fixed": "#d9e2ff",
+                        "on-secondary-fixed-variant": "#633f00",
+                        "primary-fixed-dim": "#b4c6f4",
+                        "outline-variant": "#c5c6cf",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-tertiary-container": "#7989a1",
+                        "tertiary-container": "#102134",
+                        "background": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#feae2c",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-secondary-fixed": "#291800",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#34466d",
+                        "on-secondary-container": "#6b4500",
+                        "inverse-primary": "#b4c6f4",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-tint": "#4c5e86",
+                        "surface-container-low": "#f2f4f6",
+                        "on-background": "#191c1e",
+                        "primary": "#00081e",
+                        "on-primary-fixed": "#041a3f",
+                        "outline": "#75777f",
+                        "on-surface-variant": "#44464e",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#000918",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed-dim": "#ffb955",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-primary-container": "#7687b2",
+                        "primary-container": "#0a1f44",
+                        "on-error": "#ffffff",
+                        "secondary": "#835500",
+                        "secondary-fixed": "#ffddb4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "container-max": "1200px",
+                        "md": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", { "lineHeight": "24px", "fontWeight": "400" }],
+                        "headline-md": ["30px", { "lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600" }],
+                        "display-lg": ["48px", { "lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "display-lg-mobile": ["36px", { "lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700" }],
+                        "label-md": ["14px", { "lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500" }],
+                        "headline-sm": ["24px", { "lineHeight": "32px", "fontWeight": "600" }],
+                        "body-lg": ["18px", { "lineHeight": "28px", "fontWeight": "400" }],
+                        "caption": ["12px", { "lineHeight": "16px", "fontWeight": "400" }]
+                    }
+                }
+            }
+        }
+    </script>
+</head>
+<body class="bg-background text-on-background font-body-md antialiased pt-20">
+<!-- TopNavBar Shared Component -->
+<header class="bg-surface-container-lowest dark:bg-surface-container-lowest fixed top-0 w-full z-50 border-b border-surface-variant dark:border-outline-variant shadow-none">
+<div class="flex justify-between items-center h-20 px-lg max-w-container-max mx-auto">
+<div class="font-headline-sm text-headline-sm font-bold text-primary dark:text-primary">
+                Ascend
+            </div>
+<nav class="hidden md:flex gap-gutter items-center font-body-md text-body-md">
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer" href="#">About</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer" href="#">How It Works</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer" href="#">Resources</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer" href="#">Stories</a>
+<a class="text-primary font-bold border-b-2 border-secondary pb-1 hover:text-secondary-container transition-all cursor-pointer" href="#">Partners</a>
+<a class="text-on-surface-variant hover:text-primary transition-colors hover:text-secondary-container transition-all cursor-pointer" href="#">Contact</a>
+</nav>
+<div class="hidden md:block">
+<button class="bg-secondary-container text-on-secondary-container px-md py-sm rounded font-label-md text-label-md cursor-pointer transition-transform duration-200 active:scale-95 hover:bg-secondary-fixed-dim">
+                    Apply Now
+                </button>
+</div>
+<!-- Mobile Menu Icon -->
+<button class="md:hidden text-primary">
+<span class="material-symbols-outlined">menu</span>
+</button>
+</div>
+</header>
+<main>
+<!-- Hero Section -->
+<section class="max-w-container-max mx-auto px-lg py-xl md:py-[120px] grid md:grid-cols-2 gap-lg items-center">
+<div>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-primary mb-md">
+                    Partner With Ascend — Invest in the Next Generation
+                </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg">
+                    Join our coalition of forward-thinking organizations and experienced professionals dedicated to empowering young talent. Together, we build pathways to success and foster a community of growth.
+                </p>
+<div class="flex flex-wrap gap-sm">
+<button class="bg-secondary-container text-on-secondary-container px-md py-sm rounded font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors">
+                        Become a Partner
+                    </button>
+<button class="border-[1.5px] border-primary-container text-primary-container px-md py-sm rounded font-label-md text-label-md hover:bg-surface-variant transition-colors bg-transparent">
+                        Learn More
+                    </button>
+</div>
+</div>
+<div class="relative h-96 rounded-xl overflow-hidden shadow-ambient-low">
+<img class="object-cover w-full h-full" data-alt="A professional, warm, light-mode corporate photograph showing a diverse group of experienced professionals mentoring young adults in a bright, modern office space. The lighting is soft and natural, emphasizing collaboration and empowerment. Subtle amber and navy accents are visible in the crisp, clean environment." src="https://lh3.googleusercontent.com/aida-public/AB6AXuDjLfihVXWGcvKKImGmYZWaZY1g452GOMATk4OyigrJ2rmBEoH9t3Jjx6Eo6kTZ6VZRbfFJJCSoOgcLCwUHhZsc4wBxGNIvIDkmMsEmb40WA-B_m2ePeSEgPLmslcJ-XBa8oJ-ovomyp154o_4cuMNisRIB2HKMb3WRBV5u8-lz1NGuR06OGhQcWbUX4slCGfg6pcxgrTgKpSkatwj5lNBon8AiZlwExz6trpFDlIkMw0koO0w7-18B_yx2Q-pN0iCCSEgfyCOXTvdO"/>
+</div>
+</section>
+<!-- 2-Column Benefit Section (Organizations vs Individuals) -->
+<section class="bg-surface-container-lowest py-xl">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="text-center mb-xl">
+<h2 class="font-headline-md text-headline-md text-primary mb-sm">Why Partner With Us?</h2>
+<p class="font-body-md text-body-md text-on-surface-variant max-w-2xl mx-auto">
+                        Whether you represent a corporate entity or are an individual expert, your contribution creates tangible impact.
+                    </p>
+</div>
+<div class="grid md:grid-cols-2 gap-lg">
+<!-- Organizations Card -->
+<div class="bg-surface border border-surface-variant rounded-lg p-lg shadow-ambient-low">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mb-md text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">domain</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">For Organizations</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">
+                            Align your brand with social impact and corporate responsibility. Sponsoring Ascend allows you to cultivate a future talent pipeline while fulfilling community engagement goals.
+                        </p>
+<ul class="space-y-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+                                Brand visibility across our platform
+                            </li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+                                Access to talent networks
+                            </li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+                                Employee engagement opportunities
+                            </li>
+</ul>
+</div>
+<!-- Individuals Card -->
+<div class="bg-surface border border-surface-variant rounded-lg p-lg shadow-ambient-low">
+<div class="w-16 h-16 bg-primary-fixed rounded-full flex items-center justify-center mb-md text-primary">
+<span class="material-symbols-outlined" style="font-size: 32px;">person_raised_hand</span>
+</div>
+<h3 class="font-headline-sm text-headline-sm text-primary mb-sm">For Individual Mentors</h3>
+<p class="font-body-md text-body-md text-on-surface-variant mb-md">
+                            Share your expertise and shape the career trajectory of an aspiring professional. Mentorship is a rewarding way to give back to your industry and develop your own leadership skills.
+                        </p>
+<ul class="space-y-sm font-body-md text-body-md text-on-surface">
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+                                Meaningful 1-on-1 impact
+                            </li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+                                Expand your professional network
+                            </li>
+<li class="flex items-center gap-sm">
+<span class="material-symbols-outlined text-secondary-container">check_circle</span>
+                                Develop coaching skills
+                            </li>
+</ul>
+</div>
+</div>
+</div>
+</section>
+<!-- Mentor Criteria Cards -->
+<section class="py-xl max-w-container-max mx-auto px-lg">
+<h2 class="font-headline-md text-headline-md text-primary mb-lg text-center">Mentor Criteria</h2>
+<div class="grid grid-cols-1 md:grid-cols-3 gap-md">
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-md text-center shadow-ambient-low">
+<div class="inline-flex w-12 h-12 bg-surface-container rounded-full items-center justify-center mb-sm text-primary-container">
+<span class="material-symbols-outlined">schedule</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-xs">Commitment</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                        Dedicate 2-4 hours per month for a minimum of 6 months.
+                    </p>
+</div>
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-md text-center shadow-ambient-low">
+<div class="inline-flex w-12 h-12 bg-surface-container rounded-full items-center justify-center mb-sm text-primary-container">
+<span class="material-symbols-outlined">work</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-xs">Expertise</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                        Minimum 5 years of professional experience in your field.
+                    </p>
+</div>
+<div class="bg-surface-container-lowest border border-surface-variant rounded-lg p-md text-center shadow-ambient-low">
+<div class="inline-flex w-12 h-12 bg-surface-container rounded-full items-center justify-center mb-sm text-primary-container">
+<span class="material-symbols-outlined">forum</span>
+</div>
+<h4 class="font-label-md text-label-md text-primary mb-xs">Communication</h4>
+<p class="font-body-md text-body-md text-on-surface-variant text-sm">
+                        Active listening and constructive feedback skills.
+                    </p>
+</div>
+</div>
+</section>
+<!-- Partner Logo Wall -->
+<section class="bg-surface-container-lowest py-xl border-y border-surface-variant">
+<div class="max-w-container-max mx-auto px-lg text-center">
+<h3 class="font-label-md text-label-md text-on-surface-variant uppercase tracking-wider mb-lg">Our Proud Partners</h3>
+<div class="flex flex-wrap justify-center items-center gap-lg md:gap-xl opacity-60 grayscale hover:grayscale-0 transition-all duration-300">
+<!-- Placeholders for logos -->
+<div class="bg-contain bg-center bg-no-repeat w-32 h-12" data-alt="A clean, minimalist vector corporate logo placeholder featuring geometric shapes in light gray, suitable for a tech company on a bright white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBSk7U1r-iKaVAkLhh0M8Mo70AIGaTO5zT33jpFPsLt3XvFMd89s5zcKm8S5zm7Lc42CE5AkjKTc7bTm03jvjCNOjWRsjHZ3liQn2iuaNC7SU16qSsg-u05puj71nH0644K285syeqRFnmg5JcNxqNb-DkoMeWDZ32mA9YfUqH3M_pzW1PsgWujwJmNwc61aICgT9pMfHorXEMxSrFOoulOrq3z-KpWeBs35gKAHKUWhB0a_t9Ce2knODymGitLqgwoGl4PD-esjsVg')"></div>
+<div class="bg-contain bg-center bg-no-repeat w-32 h-12" data-alt="A clean, minimalist vector corporate logo placeholder featuring abstract overlapping circles in light gray, representing connectivity on a bright white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBQPwKEPGRLOOloY7IJNmoo4IV687zC7yuzBi2NdLoFrYT8VVrEpBIKvyqBm3xh7YwneKpAeuwIFDO29hlXwsLEySypmOv07vKo3inHKJl2Ma9GZuYscvRuK2oFNUMIjvfn6NNGww3_SGFaNTJwWzOtbqluf9zujrVgkJq9gDTV4Hy4M62-2wB2kTPHfBB6x0baTiDfD9x4AIZnJPy0zoLOUUwbc4s1SkjcSaN6biZwbYQ8iePNhQlNwYaeWJGhhWx40WYYKaCxlq6E')"></div>
+<div class="bg-contain bg-center bg-no-repeat w-32 h-12" data-alt="A clean, minimalist vector corporate logo placeholder featuring bold typography and a subtle leaf motif in light gray, on a bright white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuBU4e0fQ4O3apnDi3MaZCIJjENNdskt4s70gdQEmpAjJi1U7cYNTgPIB_WykNAuCta9qZQRHZTR_92IXnzFgXBSxMownMAsB3NMGvLlQY9MNgJjh9jwpW6u3Y00Ei9uqRAGZGyd-CPfISNNj-eU2evwBC0qjDeiBYp58ibL5xJlfjg-_cjIrYbO1eFunMX_ND6uRCdSToMiYOAo9J3dox--Dl9HukQjlIfGCuxZbQUWeQ137C0LqQeDglOVEgNHOIoquJzOuxC50Ri8')"></div>
+<div class="bg-contain bg-center bg-no-repeat w-32 h-12" data-alt="A clean, minimalist vector corporate logo placeholder featuring sharp, modern lines forming a building silhouette in light gray, on a bright white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuAoCgc7E0o7cc2Pe334qdxB6wGk_eeXY2eez5snDratdofseY5medH3y3YD06BPAN2_bZJOxJtTuEifwwSw0obC5oeSQcuLVzV6vGGErmn2uMilDy0urhSlIoI9bYFPti9V-3-Hw_pZz-mqh5aGk6boYMpC5_1lmp5y59NDccGA81atfsHvf3Pw7us7OaVUcL-PHa-rEbvGuudkOxNVjVvwfGJ8hrSPc07R7KxU8TROoyLv6aWw-0O52Alt0f-knmPH7LJIiEP0Vi6B')"></div>
+<div class="bg-contain bg-center bg-no-repeat w-32 h-12" data-alt="A clean, minimalist vector corporate logo placeholder featuring an abstract lettermark design in light gray, suitable for a consulting firm on a bright white background." style="background-image: url('https://lh3.googleusercontent.com/aida-public/AB6AXuCYiQ4rcsgrA-G2bu2PV5SHelWWkdsHz4CP88MyzZHSGzaVwwVQhILRwahrVzgtUQspG4zb1BKPkv8mgfJQr4iZryh9OVPqfRrKpjInauEtgJIp55j5PIPcxU5h5xqkV05V41MWX8WSsCkl3iptqWvCAQbMx6iu0ijWGM7o6l7ry7zmclHAHGWFATTQWtXKhDRHKAGyLWmJWqsCbHAmPVZwWLxi8vQrFlqzDpnhctlgyZ-cLg03GIU9qY6Z48CTc3n5zoRNYqf9Enwu')"></div>
+</div>
+</div>
+</section>
+<!-- CTA Section -->
+<section class="py-[100px] max-w-container-max mx-auto px-lg text-center">
+<div class="bg-primary rounded-xl p-xl shadow-ambient-low relative overflow-hidden">
+<!-- Abstract decorative element -->
+<div class="absolute -top-24 -right-24 w-64 h-64 bg-primary-container rounded-full opacity-50 blur-3xl"></div>
+<div class="relative z-10">
+<h2 class="font-headline-md text-headline-md text-on-primary mb-sm">Ready to Make an Impact?</h2>
+<p class="font-body-lg text-body-lg text-on-primary-fixed-variant max-w-2xl mx-auto mb-lg">
+                        Join us in shaping the leaders of tomorrow. Reach out to our partnership team to discuss how we can collaborate.
+                    </p>
+<div class="flex flex-col sm:flex-row justify-center items-center gap-md">
+<button class="bg-secondary-container text-on-secondary-container px-xl py-sm rounded font-label-md text-label-md hover:bg-secondary-fixed-dim transition-colors shadow-ambient-low">
+                            Become a Partner
+                        </button>
+<a class="font-label-md text-label-md text-on-primary hover:text-secondary-fixed transition-colors flex items-center gap-xs" href="mailto:partnerships@ascend.org">
+<span class="material-symbols-outlined text-sm">mail</span>
+                            partnerships@ascend.org
+                        </a>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer Shared Component -->
+<footer class="bg-primary dark:bg-primary w-full py-xl text-on-primary dark:text-on-primary font-body-md text-body-md">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-lg max-w-container-max mx-auto">
+<div class="col-span-1 md:col-span-1">
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary mb-md">
+                    Ascend
+                </div>
+<p class="text-on-primary-fixed-variant text-sm mb-lg">
+                    Empowering the next generation of professional leaders through dedicated mentorship and community.
+                </p>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-on-primary mb-md uppercase tracking-wider">Connect</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">LinkedIn</a></li>
+<li><a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Instagram</a></li>
+<li><a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Twitter</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-on-primary mb-md uppercase tracking-wider">Legal</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Privacy Policy</a></li>
+<li><a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Terms of Service</a></li>
+</ul>
+</div>
+<div class="col-span-1">
+<h4 class="font-label-md text-label-md text-on-primary mb-md uppercase tracking-wider">Contact</h4>
+<ul class="space-y-sm">
+<li><a class="text-on-primary-fixed-variant hover:text-on-primary hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Contact Us</a></li>
+</ul>
+</div>
+</div>
+<div class="mt-xl pt-lg border-t border-primary-container px-lg max-w-container-max mx-auto text-center text-on-primary-fixed-variant text-sm">
+            © 2024 Ascend Mentorship Program. All rights reserved.
+        </div>
+</footer>
+</body></html>

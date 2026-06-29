@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+
+<html class="scroll-smooth" lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Ascend - Launch Your Career with the Right Mentor Behind You</title>
+<!-- Material Symbols -->
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined:wght,FILL@100..700,0..1&amp;display=swap" rel="stylesheet"/>
+<!-- Google Fonts -->
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&amp;display=swap" rel="stylesheet"/>
+<!-- Tailwind CSS -->
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<!-- Tailwind Config -->
+<script id="tailwind-config">
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    "colors": {
+                        "surface-dim": "#d8dadc",
+                        "primary-fixed": "#d9e2ff",
+                        "on-secondary-fixed-variant": "#633f00",
+                        "primary-fixed-dim": "#b4c6f4",
+                        "outline-variant": "#c5c6cf",
+                        "surface-variant": "#e0e3e5",
+                        "on-surface": "#191c1e",
+                        "surface": "#f7f9fb",
+                        "surface-bright": "#f7f9fb",
+                        "surface-container": "#eceef0",
+                        "on-tertiary-fixed-variant": "#38485d",
+                        "on-tertiary-container": "#7989a1",
+                        "tertiary-container": "#102134",
+                        "background": "#f7f9fb",
+                        "surface-container-lowest": "#ffffff",
+                        "secondary-container": "#feae2c",
+                        "tertiary-fixed": "#d3e4fe",
+                        "on-secondary-fixed": "#291800",
+                        "inverse-on-surface": "#eff1f3",
+                        "on-tertiary-fixed": "#0b1c30",
+                        "error-container": "#ffdad6",
+                        "on-primary-fixed-variant": "#34466d",
+                        "on-secondary-container": "#6b4500",
+                        "inverse-primary": "#b4c6f4",
+                        "on-secondary": "#ffffff",
+                        "surface-container-highest": "#e0e3e5",
+                        "surface-container-high": "#e6e8ea",
+                        "surface-tint": "#4c5e86",
+                        "surface-container-low": "#f2f4f6",
+                        "on-background": "#191c1e",
+                        "primary": "#00081e",
+                        "on-primary-fixed": "#041a3f",
+                        "outline": "#75777f",
+                        "on-surface-variant": "#44464e",
+                        "on-error-container": "#93000a",
+                        "tertiary": "#000918",
+                        "error": "#ba1a1a",
+                        "on-primary": "#ffffff",
+                        "inverse-surface": "#2d3133",
+                        "secondary-fixed-dim": "#ffb955",
+                        "on-tertiary": "#ffffff",
+                        "tertiary-fixed-dim": "#b7c8e1",
+                        "on-primary-container": "#7687b2",
+                        "primary-container": "#0a1f44",
+                        "on-error": "#ffffff",
+                        "secondary": "#835500",
+                        "secondary-fixed": "#ffddb4"
+                    },
+                    "borderRadius": {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                    "spacing": {
+                        "sm": "12px",
+                        "xs": "4px",
+                        "lg": "48px",
+                        "base": "8px",
+                        "xl": "80px",
+                        "container-max": "1200px",
+                        "md": "24px",
+                        "gutter": "24px"
+                    },
+                    "fontFamily": {
+                        "body-md": ["Inter"],
+                        "headline-md": ["Inter"],
+                        "display-lg": ["Inter"],
+                        "display-lg-mobile": ["Inter"],
+                        "label-md": ["Inter"],
+                        "headline-sm": ["Inter"],
+                        "body-lg": ["Inter"],
+                        "caption": ["Inter"]
+                    },
+                    "fontSize": {
+                        "body-md": ["16px", {"lineHeight": "24px", "fontWeight": "400"}],
+                        "headline-md": ["30px", {"lineHeight": "38px", "letterSpacing": "-0.01em", "fontWeight": "600"}],
+                        "display-lg": ["48px", {"lineHeight": "56px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "display-lg-mobile": ["36px", {"lineHeight": "44px", "letterSpacing": "-0.02em", "fontWeight": "700"}],
+                        "label-md": ["14px", {"lineHeight": "20px", "letterSpacing": "0.05em", "fontWeight": "500"}],
+                        "headline-sm": ["24px", {"lineHeight": "32px", "fontWeight": "600"}],
+                        "body-lg": ["18px", {"lineHeight": "28px", "fontWeight": "400"}],
+                        "caption": ["12px", {"lineHeight": "16px", "fontWeight": "400"}]
+                    }
+                }
+            }
+        }
+    </script>
+<style>
+        .material-symbols-outlined {
+            font-family: 'Material Symbols Outlined';
+            font-weight: normal;
+            font-style: normal;
+            font-size: 24px;
+            line-height: 1;
+            letter-spacing: normal;
+            text-transform: none;
+            display: inline-block;
+            white-space: nowrap;
+            word-wrap: normal;
+            direction: ltr;
+            -webkit-font-feature-settings: 'liga';
+            -webkit-font-smoothing: antialiased;
+        }
+        
+        .fade-in-up {
+            opacity: 0;
+            transform: translateY(20px);
+            transition: opacity 0.6s ease-out, transform 0.6s ease-out;
+        }
+        
+        .fade-in-up.visible {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .glass-card {
+            background: rgba(255, 255, 255, 0.7);
+            backdrop-filter: blur(12px);
+            -webkit-backdrop-filter: blur(12px);
+            border: 1px solid rgba(255, 255, 255, 0.3);
+        }
+        
+        /* Low Elevation Shadow */
+        .shadow-low {
+            box-shadow: 0 4px 12px rgba(0, 8, 30, 0.05);
+        }
+        
+        /* High Elevation Shadow */
+        .shadow-high {
+            box-shadow: 0 8px 24px rgba(0, 8, 30, 0.1);
+        }
+    </style>
+</head>
+<body class="bg-background text-on-background font-body-md text-body-md antialiased overflow-x-hidden selection:bg-secondary-container selection:text-primary">
+<!-- Top Navigation Bar -->
+<nav class="bg-surface-container-lowest dark:bg-surface-container-lowest fixed top-0 w-full z-50 border-b border-surface-variant dark:border-outline-variant shadow-none">
+<div class="flex justify-between items-center h-20 px-lg max-w-container-max mx-auto">
+<!-- Brand -->
+<a class="font-headline-sm text-headline-sm font-bold text-[#0A1F44] dark:text-[#0A1F44] cursor-pointer transition-transform duration-200 active:scale-95 hover:text-secondary-container transition-all" href="#">
+                Ascend
+            </a>
+<!-- Nav Links (Desktop) -->
+<div class="hidden md:flex space-x-md">
+<a class="text-[#0A1F44] font-bold border-b-2 border-secondary font-body-md text-body-md cursor-pointer transition-transform duration-200 active:scale-95" href="#">Home</a>
+<a class="text-on-surface-variant hover:text-[#0A1F44] transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">About</a>
+<a class="text-on-surface-variant hover:text-[#0A1F44] transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">How It Works</a>
+<a class="text-on-surface-variant hover:text-[#0A1F44] transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Resources</a>
+<a class="text-on-surface-variant hover:text-[#0A1F44] transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Stories</a>
+<a class="text-on-surface-variant hover:text-[#0A1F44] transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Partners</a>
+<a class="text-on-surface-variant hover:text-[#0A1F44] transition-colors font-body-md text-body-md hover:text-secondary-container transition-all cursor-pointer transition-transform duration-200 active:scale-95" href="#">Contact</a>
+</div>
+<!-- Trailing Action -->
+<a class="hidden md:inline-flex items-center justify-center bg-[#F5A623] text-primary font-label-md text-label-md px-md py-sm rounded-DEFAULT hover:brightness-110 transition-colors shadow-low cursor-pointer transition-transform duration-200 active:scale-95" href="#">
+                Apply Now
+            </a>
+<!-- Mobile Menu Toggle -->
+<button class="md:hidden text-[#0A1F44] p-xs rounded hover:bg-surface-variant transition-colors">
+<span class="material-symbols-outlined" data-icon="menu">menu</span>
+</button>
+</div>
+</nav>
+<!-- Main Content -->
+<main class="pt-[80px]"> <!-- Offset for fixed nav -->
+<!-- Hero Section -->
+<section class="relative min-h-[870px] flex items-center pt-lg pb-xl overflow-hidden">
+<!-- Background Image & Shader -->
+<div class="absolute inset-0 z-0">
+<div class="absolute inset-0 w-full h-full">
+    {{DATA:ANIMATION:ANIMATION_1}}
+</div>
+<div class="absolute inset-0 bg-gradient-to-b from-background/90 via-background/60 to-background/95"></div>
+</div>
+<div class="relative z-10 w-full max-w-container-max mx-auto px-lg grid grid-cols-1 lg:grid-cols-12 gap-gutter items-center">
+<div class="lg:col-span-8">
+<span class="inline-block py-xs px-sm bg-primary-fixed text-[#0A1F44] font-label-md text-label-md rounded-full mb-md fade-in-up">
+                        Cohort 4 Applications Open
+                    </span>
+<h1 class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-[#0A1F44] mb-md tracking-tight fade-in-up">
+                        Launch Your Career with the Right Mentor Behind You
+                    </h1>
+<p class="font-body-lg text-body-lg text-on-surface-variant mb-lg max-w-2xl fade-in-up" style="transition-delay: 100ms;">
+                        The Ascend Mentorship Program connects recent graduates and young professionals with experienced mentors for structured career growth, expanding your network and unlocking new opportunities.
+                    </p>
+<div class="flex flex-col sm:flex-row gap-sm fade-in-up" style="transition-delay: 200ms;">
+<a class="inline-flex items-center justify-center bg-[#F5A623] text-primary font-label-md text-label-md px-lg py-sm rounded-DEFAULT shadow-low hover:brightness-110 transition-all duration-200" href="#">
+                            Apply as a Mentee
+                        </a>
+<a class="inline-flex items-center justify-center bg-transparent border-[1.5px] border-[#0A1F44] text-[#0A1F44] font-label-md text-label-md px-lg py-sm rounded-DEFAULT hover:bg-surface-variant transition-all duration-200" href="#">
+                            Become a Mentor
+                        </a>
+</div>
+</div>
+</div>
+</section>
+<!-- Stats Strip -->
+<section class="bg-primary text-on-primary py-lg">
+<div class="max-w-container-max mx-auto px-lg">
+<div class="grid grid-cols-1 md:grid-cols-3 gap-lg text-center fade-in-up">
+<div>
+<div class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-secondary-container mb-xs">50+</div>
+<div class="font-label-md text-label-md tracking-widest uppercase opacity-80">Mentors</div>
+</div>
+<div class="hidden md:block w-px bg-on-primary/20 mx-auto h-full"></div>
+<div class="md:hidden h-px bg-on-primary/20 w-full my-sm"></div>
+<div>
+<div class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-secondary-container mb-xs">3</div>
+<div class="font-label-md text-label-md tracking-widest uppercase opacity-80">Cohorts</div>
+</div>
+<div class="hidden md:block w-px bg-on-primary/20 mx-auto h-full"></div>
+<div class="md:hidden h-px bg-on-primary/20 w-full my-sm"></div>
+<div>
+<div class="font-display-lg-mobile text-display-lg-mobile md:font-display-lg md:text-display-lg text-secondary-container mb-xs">200+</div>
+<div class="font-label-md text-label-md tracking-widest uppercase opacity-80">Participants</div>
+</div>
+</div>
+</div>
+</section>
+</main>
+<!-- Footer -->
+<footer class="bg-primary w-full py-xl">
+<div class="grid grid-cols-1 md:grid-cols-4 gap-gutter px-lg max-w-container-max mx-auto">
+<!-- Brand & Copyright -->
+<div class="md:col-span-1 flex flex-col justify-between">
+<div class="font-headline-sm text-headline-sm font-bold text-on-primary mb-md opacity-90 hover:opacity-100">
+                    Ascend
+                </div>
+<p class="font-caption text-caption text-on-primary-fixed-variant mt-auto">
+                    © 2024 Ascend Mentorship Program. All rights reserved.
+                </p>
+</div>
+<!-- Links Group 1 -->
+<div class="flex flex-col space-y-sm">
+<a class="text-on-primary-fixed-variant hover:text-on-primary font-body-md text-body-md hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">LinkedIn</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary font-body-md text-body-md hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Instagram</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary font-body-md text-body-md hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Twitter</a>
+</div>
+<!-- Links Group 2 -->
+<div class="flex flex-col space-y-sm">
+<a class="text-on-primary-fixed-variant hover:text-on-primary font-body-md text-body-md hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Contact Us</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary font-body-md text-body-md hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Privacy Policy</a>
+<a class="text-on-primary-fixed-variant hover:text-on-primary font-body-md text-body-md hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100" href="#">Terms of Service</a>
+</div>
+<!-- Call to Action / Final touch -->
+<div class="flex flex-col items-start md:items-end">
+<a class="inline-flex items-center text-secondary-fixed font-medium font-body-md text-body-md hover:text-secondary-fixed transition-colors opacity-90 hover:opacity-100 group" href="#">
+                    Apply Now 
+                    <span class="material-symbols-outlined ml-xs transition-transform group-hover:translate-x-1" data-icon="arrow_forward">arrow_forward</span>
+</a>
+</div>
+</div>
+</footer>
+<!-- Scroll Animations Script -->
+<script>
+        document.addEventListener('DOMContentLoaded', () => {
+            const observerOptions = {
+                root: null,
+                rootMargin: '0px',
+                threshold: 0.1
+            };
+
+            const observer = new IntersectionObserver((entries, observer) => {
+                entries.forEach(entry => {
+                    if (entry.isIntersecting) {
+                        entry.target.classList.add('visible');
+                        observer.unobserve(entry.target);
+                    }
+                });
+            }, observerOptions);
+
+            document.querySelectorAll('.fade-in-up').forEach(el => {
+                observer.observe(el);
+            });
+        });
+    </script>
+</body></html>
