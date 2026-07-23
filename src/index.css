@@ -1,9 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Plus+Jakarta+Sans:wght@400;500;600;700;800&family=Inter:wght@400;500;600&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700;800&family=Open+Sans:wght@400;500;600&display=swap');
 @import "tailwindcss";
 
 :root {
-  --navy: #0A1F44;
-  --gold: #F5A623;
+  --summit-teal: #1B6355;
+  --radiant-gold: #F4B740;
+  --ascent-sky: #87C9E0;
+  --graphite-gray: #3B3B3B;
+  --pure-white: #FFFFFF;
+  --mist-silver: #E6E6E6;
+  --energy-coral: #F76C5E;
+  /* legacy aliases */
+  --navy: #1B6355;
+  --gold: #F4B740;
 }
 
 * {
@@ -13,12 +21,78 @@
 }
 
 body {
-  font-family: 'Inter', sans-serif;
-  color: #1a1c1e;
+  font-family: 'Open Sans', sans-serif;
+  color: #3B3B3B;
   background: #ffffff;
   -webkit-font-smoothing: antialiased;
 }
 
 h1, h2, h3, h4, h5, h6 {
-  font-family: 'Plus Jakarta Sans', sans-serif;
+  font-family: 'Montserrat', sans-serif;
+}
+
+/* ── Keyframe animations ── */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(28px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+@keyframes fadeIn {
+  from { opacity: 0; }
+  to   { opacity: 1; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes shimmer {
+  0%   { background-position: -400px 0; }
+  100% { background-position: 400px 0; }
+}
+
+@keyframes floatY {
+  0%, 100% { transform: translateY(0); }
+  50%       { transform: translateY(-12px); }
+}
+
+/* Hero auto-animate classes (no IntersectionObserver needed — already in view) */
+.hero-animate {
+  animation: fadeInUp 0.7s ease-out both;
+}
+.hero-animate-delay-1 { animation-delay: 0.15s; }
+.hero-animate-delay-2 { animation-delay: 0.3s; }
+.hero-animate-delay-3 { animation-delay: 0.45s; }
+.hero-animate-delay-4 { animation-delay: 0.6s; }
+
+/* Card hover lift */
+.card-lift {
+  transition: transform 0.22s ease, box-shadow 0.22s ease;
+}
+.card-lift:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 16px 40px rgba(27, 99, 85, 0.14) !important;
+}
+
+/* Smooth spin for loaders */
+.spin {
+  animation: spin 0.8s linear infinite;
+}
+
+/* ── Mobile: prevent horizontal overflow ── */
+html, body {
+  overflow-x: hidden;
+  max-width: 100%;
+}
+
+img {
+  max-width: 100%;
+}
+
+/* Loading skeleton */
+.skeleton {
+  background: linear-gradient(90deg, #f0f0f0 25%, #e0e0e0 50%, #f0f0f0 75%);
+  background-size: 400px 100%;
+  animation: shimmer 1.4s ease-in-out infinite;
+  border-radius: 8px;
 }

@@ -24,3 +24,7 @@ dist-ssr
 *.njsproj
 *.sln
 *.sw?
+.vercel
+
+# Large video files — host on Cloudflare Stream or compress before committing
+public/*.mp4
